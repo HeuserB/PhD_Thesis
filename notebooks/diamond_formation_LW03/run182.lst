@@ -1,0 +1,162 @@
+********************************************************************************
+   General Structure Analysis System-II Crystal Structure Refinement
+              by Robert B. Von Dreele & Brian H. Toby
+                Argonne National Laboratory(C), 2010
+ This product includes software developed by the UChicago Argonne, LLC,
+            as Operator of Argonne National Laboratory.
+                          Please cite:
+   B.H. Toby & R.B. Von Dreele, J. Appl. Cryst. 46, 544-549 (2013)
+********************************************************************************
+ Least squares controls:
+ Refinement type: analytic Hessian
+ Maximum number of cycles: 3
+ Regularize hydrogens (if any): False
+ Initial shift factor: 1.000
+
+ Phases:
+
+ Phase name: C
+=======================================================================================================================================
+
+ X-ray scattering factors:
+   Symbol     fa                                      fb                                      fc
+---------------------------------------------------------------------------------------------------
+ C          2.31000   1.02000   1.58860   0.86500  20.84390  10.20750   0.56870  51.65120   0.21560
+
+ Neutron scattering factors:
+   Symbol   isotope       mass       b       resonant terms
+---------------------------------------------------------------------------------------------------
+ C       Nat. Abund.     12.011    0.665
+
+ Space Group: F d -3 m
+ The lattice is centrosymmetric F-centered cubic
+ The Laue symmetry is m3m
+ The lattice point group is m3m
+ Multiplicity of a general site is 192
+ The inversion center is located at 0,0,0
+ 
+ The equivalent positions are:
+
+ (0,0,0; 0,1/2,1/2; 1/2,0,1/2; 1/2,1/2,0)+
+
+ ( 1)     X,     Y,     Z 
+ ( 2)     Z,     X,     Y 
+ ( 3)     Y,     Z,     X 
+ ( 4) 1/4+X, 1/4+Y,    -Z 
+ ( 5)    -Z, 1/4+X, 1/4+Y 
+ ( 6) 1/4+Y,    -Z, 1/4+X 
+ ( 7) 1/4-Z, 1/2+X, 3/4-Y 
+ ( 8) 3/4-Y, 1/4-Z, 1/2+X 
+ ( 9) 1/2+Y, 1/4-Z, 3/4-X 
+ (10) 3/4-X, 1/2+Y, 1/4-Z 
+ (11) 1/4-Z, 3/4-X, 1/2+Y 
+ (12) 1/2+X, 3/4-Y, 1/4-Z 
+ (13)     Y,     X,     Z 
+ (14)     Z,     Y,     X 
+ (15)     X,     Z,     Y 
+ (16) 1/4+Y, 1/4+X,    -Z 
+ (17)    -Z, 1/4+Y, 1/4+X 
+ (18) 1/4+X,    -Z, 1/4+Y 
+ (19) 1/4-Z, 1/2+Y, 3/4-X 
+ (20) 3/4-X, 1/4-Z, 1/2+Y 
+ (21) 1/2+X, 1/4-Z, 3/4-Y 
+ (22) 3/4-Y, 1/2+X, 1/4-Z 
+ (23) 1/4-Z, 3/4-Y, 1/2+X 
+ (24) 1/2+Y, 3/4-X, 1/4-Z 
+
+ Atoms:
+   name    type  refine?   x         y         z      frac site sym  mult I/A   Uiso     U11     U22     U33     U12     U13     U23
+---------------------------------------------------------------------------------------------------------------------------------------
+     C1      C          0.96000   0.96000   0.96000   0.2503m(111)   32    I 0.00000                                                
+
+ Unit cell: a = 3.54000 b = 3.54000 c = 3.54000 alpha = 90.000 beta = 90.000 gamma = 90.000 volume = 44.362 Refine? False
+
+ Spherical harmonics texture: Order:0
+
+ Phase: C in histogram: PWDR tmp.xy
+=======================================================================================================================================
+ Phase fraction  :     1.0000 Refine? False
+ Extinction coeff:     0.0000 Refine? False
+ March-Dollase PO:     1.0000 Refine? False Axis: 0 0 1
+
+ Size model    : isotropic equatorial:       1.000 Refine? False
+	 LG mixing coeff.:       1.0000 Refine? False
+
+ Mustrain model: isotropic equatorial:      1000.0 Refine? False
+	 LG mixing coeff.:      1.0000 Refine? False
+
+ Hydrostatic/elastic strain:
+ names :         D11          eA
+ values:           0           0
+ refine:       False       False
+
+ Histogram: PWDR tmp.xy histogram Id: 0
+=======================================================================================================================================
+ Instrument type: Debye-Scherrer
+ Histogram limits:    22.00 deg to    61.00 deg
+
+ Sample Parameters:
+ Goniometer omega = 0.00, chi = 0.00, phi = 0.00
+ name  :         Scale    Absorption     DisplaceX     DisplaceY
+ value :        1.0000        0.0000        0.0000        0.0000
+ refine:          True          True          True         False
+
+ Instrument Parameters:
+ name  :     Azimuth        Bank         Lam    Polariz.        SH/L           U           V           W
+ value :    0.000000    1.000000    1.305100    0.990000    0.026436    5.984041   -1.287714    0.118522
+ refine:                   False       False       False       False       False       False       False
+
+ name  :           X           Y           Z        Zero
+ value :   -0.097779    4.401474    0.000000    0.000000
+ refine:       False       False       False       False
+
+ Background function: chebyschev-1 Refine? True
+ Coefficients:      1.000     0.000
+ Fixed background file: ; mult: 1.000  Refine? False
+
+ Refinement results:
+---------------------------------------------------------------------------------------------------------------------------------------
+ Number of function calls: 5 No. of observations: 862 No. of parameters: 5 User rejected: 0 Sp. gp. extinct: 0
+ Refinement time =    0.097s,    0.048s/cycle, for 2 cycles
+ wR =   31.02%, chi**2 =      19685.2, GOF =   4.79
+
+ Phases:
+ Result for phase: C
+=======================================================================================================================================
+
+ Atoms:
+   name      x         y         z      frac   Uiso     U11     U22     U33     U12     U13     U23
+---------------------------------------------------------------------------------------------------------------------------------------
+     C1      C:
+ values:   0.96000   0.96000   0.96000   0.250 0.00000
+ sig   :                                              
+
+ Density: 3.5967 g/cm**3
+
+ Phase: C in histogram: PWDR tmp.xy
+=======================================================================================================================================
+ Final refinement RF, RF^2 = 90.27%, 99.05% on 1 reflections
+ Durbin-Watson statistic = 0.002
+ Bragg intensity sum = 31.4
+
+ Histogram: PWDR tmp.xy histogram Id: 0
+=======================================================================================================================================
+ PWDR histogram weight factor = 1.000
+ Final refinement wR = 31.02% on 862 observations in this histogram
+ Other residuals: R = 24.84%, R-bkg = 14.30%, wR-bkg = 31.02% wRmin = 6.49%
+ Instrument type: Debye-Scherrer
+
+ Resonant form factors:(ref: D.T. Cromer & D.A. Liberman (1981), Acta Cryst. A37, 267-268.)
+ Element:        C
+ f'     :    0.013
+ f"     :    0.006
+
+ Sample Parameters:
+ names :         Scale    Absorption     DisplaceX     DisplaceY
+ values:        0.3577        0.3654       64.8818        0.0000
+ sig   :        0.6651        0.5514      618.9363              
+
+ Background function: chebyschev-1
+ value :      214.4    -94.86
+ sig   :      2.396     3.853
+ Background sums: empirical 1.85e+05, Debye 0, peaks 0, Total 1.85e+05
