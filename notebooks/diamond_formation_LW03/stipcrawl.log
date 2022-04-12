@@ -1,0 +1,67 @@
+[33m[!] [39m 2022-04-12 13:48:05,420:Trying to load files located at V1: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar1/r192_V1.tif and V2: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar2/r192_V2.tif
+[33m[!] [39m 2022-04-12 13:48:05,428:Apparently no VISAR data
+[33m[!] [39m 2022-04-12 13:48:38,360:Trying to load files located at 
+V1: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar1/r192_V1.tif and 
+V2: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar2/r192_V2.tif
+[33m[!] [39m 2022-04-12 13:48:38,363:Apparently no VISAR data
+[33m[!] [39m 2022-04-12 13:48:45,829:Trying to load files located at: 
+V1: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar1/r192_V1.tif and 
+V2: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar2/r192_V2.tif
+[33m[!] [39m 2022-04-12 13:48:45,832:Apparently no VISAR data
+[33m[!] [39m 2022-04-12 13:50:24,518:Trying to load files located at: 
+V1: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar1/r190_V1.tif and 
+V2: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar2/r190_V2.tif
+[33m[!] [39m 2022-04-12 13:50:24,781:Lodaing files successful
+[33m[!] [39m 2022-04-12 13:50:38,188:Trying to load files located at: 
+V1: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar1/r190_V1.tif and 
+V2: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar2/r190_V2.tif
+[33m[!] [39m 2022-04-12 13:50:38,220:Lodaing files successful
+[33m[!] [39m 2022-04-12 13:52:47,199:Trying to load files located at: 
+V1: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar1/r190_V1.tif and 
+V2: /media/benjamin/disk/HZDR_data/Data/2020_LCLS-Kraus/Data/VISAR/visar2/r190_V2.tif
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+[34m[~] [39m Loading files successful
+ERROR:2022-04-12 14:42:34,144:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR
+ERROR:2022-04-12 14:42:55,008:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR
+ERROR:2022-04-12 14:43:37,276:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR
+[33m[!] [39m 2022-04-12 14:44:00,380:Trying to load raw data at: 
+V1: /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISARr182_V1.tif
+ERROR:2022-04-12 14:44:00,382:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR
+[33m[!] [39m 2022-04-12 14:44:13,047:Trying to load raw data at: 
+V1: /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/r182_V1.tif
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+ERROR:2022-04-12 15:09:23,513:Apparently no Neutrino data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+[34m[~] [39m Loading raw data successful
+ERROR:2022-04-12 15:09:52,462:Apparently no Neutrino data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+ERROR:2022-04-12 15:14:32,156:Apparently no Neutrino data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+ERROR:2022-04-12 15:27:12,254:Apparently no Neutrino data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
