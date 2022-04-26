@@ -36,8 +36,8 @@ def merge_quads(quad_a, quad_b, plot=False):
         quad_a = quad_b
         quad_b = tmp
 
-    print(f'Quad_A going from : {quad_a[0].min()} to {quad_a[0].max()} ')
-    print(f'Quad_B going from : {quad_b[0].min()} to {quad_b[0].max()} ')
+    #print(f'Quad_A going from : {quad_a[0].min()} to {quad_a[0].max()} ')
+    #print(f'Quad_B going from : {quad_b[0].min()} to {quad_b[0].max()} ')
 
     # Crop both arrays because the edges are never nice due to low statistics and saturation 
     quart_distance      = abs(np.max(quad_a[0])-np.min(quad_b[0]))/3
@@ -172,18 +172,18 @@ def combine_quads_cif(files_quad, file_peak):
     tmp_1[1]            *= scale[0]
     tmp_2[1]            *= scale[1]
 
-    print(f"Combined data: {tmp_1.shape} tmp: {tmp_2.shape}")
+    #print(f"Combined data: {tmp_1.shape} tmp: {tmp_2.shape}")
     combined_data       = merge_quads(tmp_1,tmp_2)
 
     for step in range(num_quads - 2):
         tmp             = np.copy(list_quads[step+2])
         tmp[1]             *= scale[step+2]
-        print(f"Combined data: {combined_data.shape} tmp: {tmp.shape}")
+        #print(f"Combined data: {combined_data.shape} tmp: {tmp.shape}")
         combined_data   = merge_quads(combined_data, tmp)    
         
 
-    print(f"The {num_quads} Quads span a theta range from: {theta_min} to {theta_max}")
-    print(f"Scaling factors are: {scale}")
+    #print(f"The {num_quads} Quads span a theta range from: {theta_min} to {theta_max}")
+    #print(f"Scaling factors are: {scale}")
     #fig, ax = plt.subplots()
     #for quad_id, quad in enumerate(list_quads):
     #    ax.plot(quad[0],quad[1]*scale[quad_id],label=f"Quad {quad_id}")
@@ -206,19 +206,19 @@ def merge_four_quads(quad_data, scale):
     sort = np.argsort(theta_start)
     list_quads = [list_quads_tmp[i] for i in sort]
 
-    [print(f"Shape of quad {quad_id} is {data.shape}") for quad_id, data in enumerate(list_quads)]
+    #[print(f"Shape of quad {quad_id} is {data.shape}") for quad_id, data in enumerate(list_quads)]
 
     tmp_1, tmp_2        = np.copy(list_quads[0]), np.copy(list_quads[1])
     tmp_1[1]            *= scale[0]
     tmp_2[1]            *= scale[1]
 
-    print(f"Combined data: {tmp_1.shape} tmp: {tmp_2.shape}")
+    #print(f"Combined data: {tmp_1.shape} tmp: {tmp_2.shape}")
     combined_data       = merge_quads(tmp_1,tmp_2)
 
     for step in range(num_quads - 2):
         tmp             = np.copy(list_quads[step+2])
         tmp[1]             *= scale[step+2]
-        print(f"Combined data: {combined_data.shape} tmp: {tmp.shape}")
+        #print(f"Combined data: {combined_data.shape} tmp: {tmp.shape}")
         combined_data   = merge_quads(combined_data, tmp)    
         
     return combined_data

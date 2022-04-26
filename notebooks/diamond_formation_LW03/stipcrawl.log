@@ -97,3 +97,21 @@ ERROR:2022-04-12 15:27:12,254:Apparently no Neutrino data in /home/benjamin/Next
 [34m[~] [39m Loading Neutrino data successful
 [34m[~] [39m Loading raw data successful
 [34m[~] [39m Loading Neutrino data successful
+ERROR:2022-04-25 09:47:41,552:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+ERROR:2022-04-25 14:03:24,964:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+[34m[~] [39m Trying to load raw data at: 
+V1: /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/r182_V1.tif
+ERROR:2022-04-25 14:04:36,490:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/
+[34m[~] [39m Trying to load raw data at: 
+V1: /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/r182_V1.tif
+ERROR:2022-04-25 14:05:17,842:Apparently no VISAR raw data in /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Thesis/.data_LW03/VISAR/r182_V1.tif
+[34m[~] [39m Trying to load raw data at: 
+V1: /home/benjamin/Nextcloud/Work/W_PhD/W_PhD_Git/PhD_Git/PhD_Thesis/.data_LW03/VISAR/r182_V1.tif
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful
+[34m[~] [39m Loading raw data successful
+[34m[~] [39m Loading Neutrino data successful

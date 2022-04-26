@@ -27,7 +27,7 @@ def integrate1d(run, quad, dir, poni, mask):
                         mask=mask)
     return np.array(result1d)
 
-def integrate2d(run, quad, dir, poni, mask):
+def integrate2d(run : int, quad : int, dir : str, poni : str, mask : np.array):
     '''
     run : int ; number of the run to load
     quad : [0,1,2,3] ; the quad to be laoded

@@ -4,6 +4,10 @@ import sys
 import os
 import imageio
 
+sys.path.append("../xrd")
+from combine_quads import merge_four_quads
+quad_scale = np.loadtxt("../../.data_LW03/instprm/quad_scale_LW03.txt")
+
 NA = np.newaxis
 
 ''' 
@@ -108,4 +112,24 @@ def load_tiff(run, quad, dir_data,pattern_folder="r$run_bkgCorrected",pattern_fi
     except:
         print(file)
         print("No such file!")
-    
+
+def merge_quad23(run, dir_data, q2_ai, q3_ai,q2_mask,q3_mask):
+    r_q2_tiff = load_tiff(run, 2, dir_data)
+    r_q3_tiff = load_tiff(run, 3, dir_data)
+    r_q2_result1d = q2_ai.integrate1d(r_q2_tiff,
+                    npt=1000,
+                    method='csr',
+                    unit='2th_deg',
+                    correctSolidAngle=True,
+                    polarization_factor=0.99,
+                    mask=q2_mask)
+    r_q3_result1d = q3_ai.integrate1d(r_q3_tiff,
+                    npt=1000,
+                    method='csr',
+                    unit='2th_deg',
+                    correctSolidAngle=True,
+                    polarization_factor=-0.99,
+                    mask=q3_mask)
+
+    merged_xy = merge_four_quads([np.array(r_q2_result1d),np.array(r_q3_result1d)], scale=[quad_scale[3],quad_scale[2]])
+    np.savetxt(f"../../.data_LW03/lineouts/r{run}_Q23.xy",merged_xy.T)
