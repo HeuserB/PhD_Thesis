@@ -54,5 +54,5 @@ In the Scherrer equation the crystalite size is related to the peak broadening b
 $$
 L = \frac{K\lambda}{\beta \cos(\theta)}
 $$
-where \beta$$ is the full width at half maximim (FWHM) of the peak.
+where $\beta$ is the full width at half maximim (FWHM) of the peak.
 To combine the information from multiple peaks, the $\ln(\beta)$ is plotted against $\ln(\frac{1}{\cos(\theta)})$. By fitting a linear funtion trough the given points the crystalite size is given by the interception with the $y$ axis as $f(x=0) = \ln(\frac{K\lambda}{L})$. Hereby the $K$ is a factor which changes with crystalite shape and $\lambda$ is the X-ray wavelength. 

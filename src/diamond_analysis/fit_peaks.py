@@ -169,3 +169,25 @@ def residual(pars, x, data=None, eps=None):
     return (model-data) / eps
 
 '''
+
+def fit_background(data):
+
+    background = PolynomialModel(degree=7, prefix='bkg_')
+    pars = background.guess(data[1], x=data[0])
+
+    pars['bkg_c0'].set(value=np.random.normal(15000.,1000))
+    pars['bkg_c1'].set(value=np.random.normal(-2500,1000))
+    pars['bkg_c2'].set(value=np.random.normal(143,500))
+    pars['bkg_c3'].set(value=np.random.normal(-4,5))
+    pars['bkg_c4'].set(value=np.random.normal(0.06,0.005))
+    pars['bkg_c5'].set(value=np.random.normal(-0.0005,5e-4))
+    pars['bkg_c6'].set(value=np.random.normal(2.0e-06,5e-6))
+    pars['bkg_c7'].set(value=np.random.normal(2.0e-06,5e-6),min=0.)
+
+    model   = background
+
+    init    = model.eval(pars, x=data[0])
+    out     = model.fit(data[1], pars, x=data[0])
+    #print(out.fit_report())
+
+    return out, None

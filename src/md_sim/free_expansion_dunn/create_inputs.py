@@ -1,11 +1,11 @@
 import numpy as np
 import re
 
-f = open("in.free_expansion_airebo_m_template",'r')
+f = open("in.free_expansion_dunn_template",'r')
 in_txt = f.read()
 f.close()
 
-f = open("lammps.SLURM_free_expansion_airebo_m",'r')
+f = open("lammps.SLURM_free_expansion_dunn",'r')
 slurm_txt = f.read()
 f.close()
 
@@ -30,13 +30,13 @@ def input_temp(in_txt, slurm_txt, temp, grid_constant, n_cells, t_init=17000.0,s
     in_txt = re.sub(r'\$seed', str(seed), in_txt)
 
     #velfile = 'dump.melt_velocity_' + str(int(temp)) + "K_" + str(int(press/1e5)) + "GPa_PP"
-    dumpfile = '/data/bh326/LAMMPS/free_expansion_airebo_m/grid_' +str(grid) +'/' + str(temp) + 'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells)
-    logfile = '/data/bh326/LAMMPS/free_expansion_airebo_m/grid_' +str(grid) +'/' + str(temp) + 'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells) +'.log'
+    dumpfile = '/data/bh326/LAMMPS/free_expansion_dunn/grid_' + str(grid) +'/' + str(temp) + 'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells)
+    logfile = '/data/bh326/LAMMPS/free_expansion_dunn/grid_' + str(grid) +'/' + str(temp) + 'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells) +'.log'
 
     in_txt = re.sub(r'\$dumpfile',dumpfile,in_txt)
     in_txt = re.sub(r'\$logfile',logfile,in_txt)
 
-    outfile = 'inputs_free_expansion/in.free_expansion_airebo_m_' + str(temp) + 'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells) + 'grid_' + str(grid)
+    outfile = 'inputs_free_expansion/in.free_expansion_dunn_' + str(temp) + 'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells) + 'grid_' + str(grid)
     
     f = open(outfile, 'w')
     f.write(in_txt)
@@ -47,13 +47,13 @@ def input_temp(in_txt, slurm_txt, temp, grid_constant, n_cells, t_init=17000.0,s
     infile = re.sub('inputs_free_expansion/', '', outfile)
     slurm_txt = re.sub(r'\$infile',infile,slurm_txt)
     
-    outfile_slurm  = 'inputs_free_expansion/lammps.free_expansion_airebo_m_' + str(temp) +'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells) + 'grid_' + str(grid)
+    outfile_slurm  = 'inputs_free_expansion/lammps.free_expansion_dunn_' + str(temp) +'K_' +str(n_cells) +'x' + str(n_cells) +'x' + str(n_cells) + 'grid_' + str(grid)
 
     f = open(outfile_slurm, 'w')
     f.write(slurm_txt)
     f.close()
 
-grids = [3.35]
+grids = [3.35,3.4,3.45,3.5]
 temperatures = [1000,2000,3000,4000]
 for grid in grids:
     for temperature in temperatures:

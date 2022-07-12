@@ -1,13 +1,12 @@
-
-from dataclasses import dataclass
-from distutils.command.config import dump_file
-from ase import Atoms
-from matplotlib import gridspec
+#from dataclasses import dataclass
+#from distutils.command.config import dump_file
+#from ase import Atoms
+#from matplotlib import gridspec
 from ovito.io import *
 from ovito.modifiers import *
 from ovito.data import *
 
-import sys
+#import sys
 import numpy as np
 import re
 NA = np.newaxis
@@ -19,11 +18,11 @@ import matplotlib.pyplot as plt
 
 start_pattern       = "Step\s+[^\n]*\n"
 end_pattern         = "Loop\s+time\s+of"
-timestep_pattern    = re.compile('\ntimestep\s+([0-9]*.[0-9]*)\s')
+timestep_pattern    = re.compile('\ntimestep\s+([0-9]+.[0-9]+)\s')
 atom_pattern        = re.compile('\nCreated ([0-9]*) atoms')
 units_pattern       = re.compile('units (.*)\n')
+run_pattern         = re.compile('\nrun\s+([0-9]+)\s')
 time_unit           = {'metal' : 1.0e-12, 'real' : 1.0e-15,'si' : 1., 'cgs' :   1., 'electron' : 1e-15 , 'micro': 1.0e-6}
-
 
 def load_thermo(file : str):
     """
@@ -37,11 +36,14 @@ def load_thermo(file : str):
 
     num_of_sets         = len(re.findall(start_pattern, txt))
     #print(f"Found {num_of_sets} different run commands")
+    #[print(f'i is: {i}') for i in timestep_pattern.findall(txt)] 
     dt                  = [np.float(i) for i in timestep_pattern.findall(txt)]
     n_atoms             = np.sum([np.int(i) for i in atom_pattern.findall(txt)])
     #print(f"A total of {n_atoms} were created.")
     unit                = units_pattern.findall(txt)[0]
-    #print(f'Unit system is {unit}')
+    if unit == 'box':
+        unit = 'metal'
+
 
     if len(dt) == 1 :
         dt              = np.repeat(dt,num_of_sets)
@@ -51,14 +53,13 @@ def load_thermo(file : str):
     else:
         print(f"Timesteps do not match run numbers!")
         return
-   
+    run_steps           = [int(i) for i in run_pattern.findall(txt)]
     dfs                 = []
     
     for i in range(num_of_sets):
         txt_w       = re.split(start_pattern,txt)[i+1]
         keys        = ["Step"]
-        [keys.append(i) for i in re.split('\s+',(re.split('\n',re.split("Step\s",txt)[i+1])[0]).strip())]
-
+        [keys.append(j) for j in re.split('\s+',(re.split('\n',re.split("Step\s",txt)[i+1])[0]).strip())]
         txt_w           = re.split(end_pattern, txt_w)[0]
         txt_w           = txt_w.strip()
         data            = np.fromstring(txt_w,sep="\t")
@@ -67,7 +68,7 @@ def load_thermo(file : str):
 
         dfs.append(df)
 
-    return dfs, dt * time_unit[unit], n_atoms
+    return dfs, dt * time_unit[unit], n_atoms, run_steps
 
 def energy_drift(df : pd.DataFrame, timestep : float, n_atoms : int):
     """
@@ -93,18 +94,44 @@ def energy_drift(df : pd.DataFrame, timestep : float, n_atoms : int):
 
     return drift
 
+def load_run(file : str):
+    grid_pattern                = re.compile('([0-9])_([0-9]+)')
+    subrun_pattern              = re.compile('([0-9]+)K_([0-9]*x){2}([0-9]+)[_restart]*.log$')
+    if re.match('.*restart.*',file):
+        print('File is a restart file!')
+        return
+    dir                         = os.path.dirname(file)
+    print(dir)
+    grid_const                  = {}
+    thermo_dfs                  = []
+    tmp                         = (grid_pattern.findall(dir))[0]
+    a                           = float(tmp[0]) + float(tmp[1])*1e-2
+    grid_const.update({dir:a})
+    data                        = pd.DataFrame(data=None, index=None, columns=['lattice_constant','temperature','cells','timestep_eq',\
+                                    'timestep_ex','drift','n_atoms','dE','dumpfile','run_steps_eq', 'run_steps_ex'])
+    dump_file                   = re.sub('.log','',file)
+    T, cells                    = int(subrun_pattern.findall(file)[0][0]), int(re.split('x',subrun_pattern.findall(file)[0][1])[0])
+    dfs, dt, n_atoms, run_steps = load_thermo(file)
+    thermo_dfs.append(dfs)
+    drift                       = energy_drift(dfs[0], dt[0], n_atoms)
+    data.loc[len(data.index)]   = [grid_const[dir],T, cells, dt[0], dt[-1], drift, n_atoms, \
+                                    (dfs[0]['TotEng'].values)[200] - (dfs[0]['TotEng'].values)[-1], dump_file,\
+                                    run_steps[0], run_steps[-1]]
+    return data, thermo_dfs
+
 def load_all_runs(dir : str):
     """
     :param dir:             directory where runs should be searched 
-    :return:                maximal energy drift over time unit for the whole run
+    :return:                pandas dataframe with all run information
     """
     run_pattern             = re.compile('grid_[0-9]_[0-9]+')
     subrun_pattern          = re.compile('([0-9]+)K_([0-9]*x){2}([0-9]+).log$')
     grid_pattern            = re.compile('([0-9])_([0-9]+)')
     dirs                    = [d for d in os.listdir(dir) if os.path.isdir(os.path.join(dir, d))]
     run_dirs, grid_const    = [], {}
+    thermo_dfs              = []
     data                    = pd.DataFrame(data=None, index=None, columns=['lattice_constant','temperature','cells','timestep_eq',\
-                                'timestep_ex','drift','n_atoms','dE','dumpfile'])
+                                'timestep_ex','drift','n_atoms','dE','dumpfile','run_steps_eq', 'run_steps_ex'])
 
     for d in dirs:
         if run_pattern.match(d):
@@ -120,9 +147,11 @@ def load_all_runs(dir : str):
             if subrun_pattern.match(file):
                 dump_file                   = re.sub('.log','',file)
                 T, cells                    = int(subrun_pattern.findall(file)[0][0]), int(re.split('x',subrun_pattern.findall(file)[0][1])[0])
-                dfs, dt, n_atoms            = load_thermo(os.path.join(subdir,file))
+                dfs, dt, n_atoms, run_steps = load_thermo(os.path.join(subdir,file))
+                thermo_dfs.append(dfs)
                 drift                       = energy_drift(dfs[0], dt[0], n_atoms)
                 data.loc[len(data.index)]   = [grid_const[d],T, cells, dt[0], dt[1], drift, n_atoms, \
-                                            (dfs[0]['TotEng'].values)[200] - (dfs[0]['TotEng'].values)[-1], os.path.join(subdir,dump_file)]
+                                            (dfs[0]['TotEng'].values)[200] - (dfs[0]['TotEng'].values)[-1], os.path.join(subdir,dump_file),\
+                                            run_steps[0], run_steps[1]]
                 #print(f"Directory: {d} file : {file}, grid constant: {grid_const[d]} T: {T}, cells: {cells}")
-    return data
+    return data, thermo_dfs
