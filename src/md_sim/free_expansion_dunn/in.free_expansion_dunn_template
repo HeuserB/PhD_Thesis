@@ -1,8 +1,7 @@
 log $logfile
 
-kim init DUNN_WenTadmor_2019v2_C__MO_956135237832_000 units
+kim init DUNN_WenTadmor_2019v2_C__MO_956135237832_000 metal
 
-metal metal
 dimension	3
 boundary	p p p
 
