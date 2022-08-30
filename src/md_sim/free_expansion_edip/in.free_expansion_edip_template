@@ -1,24 +1,19 @@
 log $logfile
 
-kim init DUNN_WenTadmor_2019v2_C__MO_956135237832_000 metal
-
+units metal
 dimension	3
 boundary	p p p
 
 neighbor	0.3 bin
-neigh_modify	every 1
+neigh_modify	delay 5
 
 atom_style full
 newton on off
 
-variable dump_rate equal 125 # the rate in timestep that atoms are dumped
-variable run_steps_eq equal 20000 # time steps for the equilibration phase
-variable run_steps_ex equal 200000 # time steps for the expansion phase
-variable timestep equal 0.0001 #timestep in picoseconds  
-
 # create geometry
 region		box block $x_min $x_max $y_min $y_max $z_min $z_max
 create_box	1 box
+#fix wall_lo all wall/lj126 xlo $wall_min 5.0 1.0 1.22462 xhi $wall_max 5.0 1.0 1.22462 ylo $wall_min 5.0 1.0 1.22462 yhi $wall_max 5.0 1.0 1.22462 zlo $wall_min 5.0 1.0 1.22462 zhi $wall_max 5.0 1.0 1.22462 units box
 
 # create the lattices metal unit for length is angstrom
 # this is a multiple of the diamond lattice constant to avoid edge efects
@@ -28,27 +23,28 @@ create_atoms    1 region diamond
 
 mass		1 12.0
 
-kim interactions C
+pair_style edip
+pair_coeff * * /home/bh326/POTENTIALS/C.edip C
 
 # define groups
 group	diamond region diamond
+
 
 # initial velocities
 
 compute	  	diamond_temp diamond temp
 velocity	diamond create $t_init $seed temp diamond_temp
 
-dump    lmp_dump_vel all custom ${dump_rate} $dumpfile id type x y z vx vz vy fx fz fy 
-thermo		1
-thermo_modify flush yes
+dump    lmp_dump_vel all custom 125 $dumpfile id type x y z vx vz vy fx fz fy 
+thermo		50
 
 # Equilibrate the diamond at a certain temperature
-fix 1 all nvt temp $temperature $temperature $(dt*50.0)
+fix 1 all nvt temp $temperature $temperature $(dt*100.0)
 
-timestep	${timestep} # 0.0001 #when using metal units [ps]
+timestep	0.0001 #when using metal units [ps]
+#timestep	0.1 #when using real units [fs]
 
-run		${run_steps_eq} # equilibration timestes
-variable E_equil equal etotal # store the Energy of the equilibrated system as a variable
+run		20000 # equilibrate for 2ns 
 
 unfix 1
 
@@ -59,4 +55,4 @@ thermo_modify lost ignore flush yes
 
 fix 2 all nve
 
-run ${run_steps_ex} # expand 
+run 200000 # expand for 20ns

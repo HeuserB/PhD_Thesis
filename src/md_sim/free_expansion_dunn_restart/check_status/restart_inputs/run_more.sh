@@ -2,7 +2,7 @@
 squeue -u bh326 > log
 OPENJOBS=$(sed -n '$=' log)
 OPENJOBS=$((OPENJOBS-1))
-OPENJOBS=$((3-OPENJOBS))
+OPENJOBS=$((4-OPENJOBS))
 
 echo $OPENJOBS
 rm log

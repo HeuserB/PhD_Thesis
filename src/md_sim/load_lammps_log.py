@@ -77,14 +77,18 @@ def energy_drift(df : pd.DataFrame, timestep : float, n_atoms : int):
     :param n_atoms:       number of atoms in the simualtion  
     :return:              maximal energy drift over time unit for the whole run
     """
-    energies        = df['TotEng'].to_numpy()
+    energies            = df['TotEng'].to_numpy()
     ### calculate forward difference ###
-    deltaE          = (np.abs((energies[1:] - energies[:-1])))/timestep
+    deltaE              = (np.abs((energies[1:] - energies[:-1])))/timestep
 
-    time                = df['Step'] * timestep
+    time                = df["Step"] * timestep
     E_tot               = df['TotEng']
 
-    linear_model        = np.polyfit(time[200:],E_tot[200:],1)
+    try:
+        linear_model        = np.polyfit(time[200:],E_tot[200:],1)
+    except:
+        print("Not 200 thermo entries in dataset. Switching to last 20")
+        linear_model        = np.polyfit(time[20:],E_tot[20:],1)
     drift               = linear_model[0]/n_atoms
     #print(f'Drift is {drift* 1e-12} eV/ps/atom')
     drift_kJ            = drift * 1.6021774232052328e-22
@@ -149,9 +153,15 @@ def load_all_runs(dir : str):
                 T, cells                    = int(subrun_pattern.findall(file)[0][0]), int(re.split('x',subrun_pattern.findall(file)[0][1])[0])
                 dfs, dt, n_atoms, run_steps = load_thermo(os.path.join(subdir,file))
                 thermo_dfs.append(dfs)
+                #print(dfs[0]["Step"] * dt[0])
                 drift                       = energy_drift(dfs[0], dt[0], n_atoms)
-                data.loc[len(data.index)]   = [grid_const[d],T, cells, dt[0], dt[1], drift, n_atoms, \
+                try:
+                    data.loc[len(data.index)]   = [grid_const[d],T, cells, dt[0], dt[1], drift, n_atoms, \
                                             (dfs[0]['TotEng'].values)[200] - (dfs[0]['TotEng'].values)[-1], os.path.join(subdir,dump_file),\
+                                            run_steps[0], run_steps[1]]
+                except:
+                    data.loc[len(data.index)]   = [grid_const[d],T, cells, dt[0], dt[1], drift, n_atoms, \
+                                            (dfs[0]['TotEng'].values)[20] - (dfs[0]['TotEng'].values)[-1], os.path.join(subdir,dump_file),\
                                             run_steps[0], run_steps[1]]
                 #print(f"Directory: {d} file : {file}, grid constant: {grid_const[d]} T: {T}, cells: {cells}")
     return data, thermo_dfs

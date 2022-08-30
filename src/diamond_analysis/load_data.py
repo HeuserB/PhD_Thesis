@@ -107,8 +107,8 @@ def list_runs(dir_data, pattern_runs):
 def load_tiff(run, quad, dir_data,pattern_folder="r$run_bkgCorrected",pattern_file="ePix10k_Quad$quad_r$run_0.tiff"):
     file = dir_data + "/" + re.sub(r'\$run',str(run),pattern_folder) + "/" + re.sub('\$quad',str(quad),re.sub(r'\$run',str(run),pattern_file))
     try:
-        data = imageio.imread(file)
-        return np.flipud(data)
+        data = imageio.imread(file);
+        return np.flipud(data);
     except:
         print(file)
         print("No such file!")
@@ -133,3 +133,23 @@ def merge_quad23(run, dir_data, q2_ai, q3_ai,q2_mask,q3_mask):
 
     merged_xy = merge_four_quads([np.array(r_q2_result1d),np.array(r_q3_result1d)], scale=[quad_scale[3],quad_scale[2]])
     np.savetxt(f"../../.data_LW03/lineouts/r{run}_Q23.xy",merged_xy.T)
+
+def merge_SACLA(run, dir_data, q_ai,mask):
+    pattern_file    =   "fpd_$run.tif"
+    file = dir_data + "/" + re.sub(r'\$run',str(run),pattern_file)
+    try:
+        data = imageio.imread(file)
+        data = np.flipud(data)
+    except:
+        print(file)
+        print("No such file!")
+
+    r_result1d = q_ai.integrate1d(data,
+                    npt=1000,
+                    method='csr',
+                    unit='2th_deg',
+                    correctSolidAngle=True,
+                    polarization_factor=0.99,
+                    mask=mask)
+
+    np.savetxt(f"../../.data_SACLA/lineouts/r{run}.xy",r_result1d.T)

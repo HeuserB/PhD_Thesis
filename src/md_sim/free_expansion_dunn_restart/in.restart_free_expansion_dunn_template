@@ -1,4 +1,4 @@
-log $logfile
+log $logfile append
 
 kim init DUNN_WenTadmor_2019v2_C__MO_956135237832_000 metal
 
@@ -6,7 +6,7 @@ dimension	3
 boundary	p p p
 
 neighbor	0.3 bin
-neigh_modify	every 1
+neigh_modify	delay 5
 
 atom_style full
 newton on off
@@ -31,32 +31,9 @@ mass		1 12.0
 kim interactions C
 
 # define groups
-group	diamond region diamond
+# group	diamond region diamond
 
-# initial velocities
+read_dump $old_dump $last_step x y z vx vz vy fx fz fy add yes
 
-compute	  	diamond_temp diamond temp
-velocity	diamond create $t_init $seed temp diamond_temp
-
-dump    lmp_dump_vel all custom ${dump_rate} $dumpfile id type x y z vx vz vy fx fz fy 
-thermo		1
-thermo_modify flush yes
-
-# Equilibrate the diamond at a certain temperature
-fix 1 all nvt temp $temperature $temperature $(dt*50.0)
-
-timestep	${timestep} # 0.0001 #when using metal units [ps]
-
-run		${run_steps_eq} # equilibration timestes
-variable E_equil equal etotal # store the Energy of the equilibrated system as a variable
-
-unfix 1
-
-# Create a large box with fixed bounadary conditions 
-change_box all boundary f f f x final -200 200 y final -200 200 z final -200 200
-# ignore lost atoms along the way
 thermo_modify lost ignore flush yes
-
-fix 2 all nve
-
-run ${run_steps_ex} # expand 
+dump    lmp_dump_vel all custom ${dump_rate} $new_dump id type x y z vx vz vy fx fz fy

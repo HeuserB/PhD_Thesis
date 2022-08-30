@@ -23,13 +23,17 @@ def lin_gauss_lorentzian(x, slope,intercept,amp_gauss, cen_gauss, wid_gauss,amp_
 def lorentzian(x,amp_lor,cen_lor,wid_lor):
     return (amp_lor/np.pi * (wid_lor/((x-cen_lor)**2+wid_lor**2)))
 
-def fit_diamond(data, plot=False):
+def custom_lorentzian(x, C111_amplitude, C111_center, C111_sigma, C220_center, C220_sigma):
+    return (C111_amplitude/np.pi * (C111_sigma/((x-C111_center)**2+C111_sigma**2))) +\
+        (C111_amplitude * 0.288 /np.pi * (C220_sigma/((x-C220_center)**2+C220_sigma**2)))
+
+def fit_diamond(data, plot=False,C111_max=3.):
 
     background = PolynomialModel(degree=7, prefix='bkg_')
     pars = background.guess(data[1], x=data[0])
 
-    pars['bkg_c0'].set(value=np.random.normal(15000.,1000))
-    pars['bkg_c1'].set(value=np.random.normal(-2500,1000))
+    pars['bkg_c0'].set(value=np.random.normal(15000.,2000))
+    pars['bkg_c1'].set(value=np.random.normal(-2500,2000))
     pars['bkg_c2'].set(value=np.random.normal(143,500))
     pars['bkg_c3'].set(value=np.random.normal(-4,5))
     pars['bkg_c4'].set(value=np.random.normal(0.06,0.005))
@@ -37,11 +41,23 @@ def fit_diamond(data, plot=False):
     pars['bkg_c6'].set(value=np.random.normal(2.0e-06,5e-6))
     pars['bkg_c7'].set(value=np.random.normal(2.0e-06,5e-6),min=0.)
 
+    '''
+    diamond_peaks   =    Model(custom_lorentzian, prefix='peaks_')
+    pars.update(diamond_peaks.make_params())
+    
+    pars['peaks_C111_center'].set(value=38.443, min=30, max=40)
+    pars['peaks_C111_sigma'].set(value=np.random.normal(0.22,0.5),min=0.,max=C111_max)
+    pars['peaks_C111_amplitude'].set(value=np.random.normal(3143,50))
+
+    pars['peaks_C220_center'].set(value=63.9, min=60, max=67)
+    pars['peaks_C220_sigma'].set(value=2.5, min=0.,max=3.7)
+
+    '''
     peak1 = LorentzianModel(prefix='C111_')
     pars.update(peak1.make_params())
 
-    pars['C111_center'].set(value=39, min=30, max=40)
-    pars['C111_sigma'].set(value=np.random.normal(2.22,0.5))
+    pars['C111_center'].set(value=38.45, min=30, max=40)
+    pars['C111_sigma'].set(value=np.random.normal(0.22,0.5),min=0.,max=C111_max)
     pars['C111_amplitude'].set(value=np.random.normal(3143,50))
 
     peak2 = LorentzianModel(prefix='C220_')
@@ -49,16 +65,20 @@ def fit_diamond(data, plot=False):
 
     pars['C220_center'].set(value=63.9, min=60, max=67)
     pars['C220_sigma'].set(value=2.5, max=3.7)
+    #pars['C220_amplitude'].set(value=np.random.normal(1000,50), min=0.)
     pars['C220_amplitude'].set(value=np.random.normal(1000,50), min=0.)
+    
 
     PET_peak = LorentzianModel(prefix='PET_')
     pars.update(PET_peak.make_params())
 
     pars['PET_center'].set(value=27, min=26, max=29.)
     pars['PET_sigma'].set(value=1.5, max=2.5)
-    pars['PET_amplitude'].set(value=np.random.normal(1000,50), min=0.)
+    #pars['PET_amplitude'].set(value=np.random.normal(1000,50), min=0.)
+    pars['PET_amplitude'].set(value=np.random.normal(1000,50), min=0.,max=0.1)
 
     model = peak1 + peak2 + background + PET_peak
+    #model = diamond_peaks + background + PET_peak
 
     init = model.eval(pars, x=data[0])
     out = model.fit(data[1], pars, x=data[0])
@@ -93,7 +113,7 @@ def fit_diamond(data, plot=False):
         fig = None
     return out, fig
 
-def sampleChi2(runs=[182,186,188,190,192],rounds=10):
+def sampleChi2(runs=[182,186,188,190,192],rounds=10,C111_max=3.):
     ### run a routine to fit and only store if the Chi2 of the fit is better ###
     fits        = [[]] * len(runs)
 
@@ -102,9 +122,10 @@ def sampleChi2(runs=[182,186,188,190,192],rounds=10):
         for run_id, run in enumerate(runs):
                 data                = np.loadtxt(f"../../.data_LW03/lineouts/r{run}_Q23.xy").T
                 fits[run_id]        = load_modelresult( f'../../.data_LW03/fits/r{run}__modelresult.sav')
-                new_fit, fig        = fit_diamond(data)
+                new_fit, fig        = fit_diamond(data, C111_max=C111_max)
                 if new_fit.chisqr < fits[run_id].chisqr:
                     if new_fit.params["C111_center"].stderr is None:
+                    #if new_fit.params["peaks_C111_center"].stderr is None:
                         print(f"Fit {i} for run {run} yielded no uncertanties and will therefore not be stored!")
                         continue
                     old_chi      = fits[run_id].chisqr
@@ -112,13 +133,13 @@ def sampleChi2(runs=[182,186,188,190,192],rounds=10):
                     save_modelresult(fits[run_id], f'../../.data_LW03/fits/r{run}__modelresult.sav')
                     print(f"Old Chi2 is {old_chi} new Chi2 is {new_fit.chisqr}")
 
-def init_fits(runs=[182,186,188,190,192]):
+def init_fits(runs=[182,186,188,190,192],C111_max=3.):
     ### fit all runs and store the optimied models in files ###
     fits        = [[]] * len(runs)
     
     for run_id, run in enumerate(runs):
         data                    = np.loadtxt(f"../../.data_LW03/lineouts/r{run}_Q23.xy").T
-        fits[run_id], fig       = fit_diamond(data)
+        fits[run_id], fig       = fit_diamond(data,C111_max=C111_max)
         #fig.savefig(f'../../.data_LW03/figures/r{run}__fit_plot.svg')
         save_modelresult(fits[run_id], f'../../.data_LW03/fits/r{run}__modelresult.sav')
 

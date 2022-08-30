@@ -12,8 +12,9 @@ do
    mv $slurmfile done/
 
    STEP=$((STEP+1))
-   if [ "$STEP" -eq "2" ]
+   if [ "$STEP" -eq "3" ]
       then
+      echo "Found three files"
       squeue -u bh326
       break
    fi

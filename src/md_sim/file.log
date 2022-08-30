@@ -6413,3 +6413,4 @@
 2022-05-10 13:57:34,032 - structure_analysis - DEBUG - Now reading structure analysis data for file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_airebo_m/airebo_m_3_35_2000K_8x8x8.h5
 2022-05-10 13:57:37,198 - structure_analysis - DEBUG - Now reading structure analysis data for file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_airebo_m/airebo_m_3_35_1000K_8x8x8.h5
 2022-05-10 13:57:42,374 - structure_analysis - DEBUG - All files were written to the new HDF5 file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_airebo_m/airebo_m.h5
+2022-08-17 10:22:23,056 - structure_analysis - DEBUG - All files were written to the new HDF5 file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop.h5

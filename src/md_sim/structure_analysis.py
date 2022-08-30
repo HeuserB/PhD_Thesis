@@ -159,6 +159,7 @@ def diamond_structure(file, bins=200):
 
 def store_as_hdf(dir : str, filename : str, bins : int, run_group : str = "airebo_m"):
     run_data, thermo_dfs    = load_all_runs(dir)
+    print(f"Found {len(run_data)} runs.")
     keys                    = ["structure_type", "diamond_lattice", "rdf_total", \
                                 "diamond_center", "diamond_radius", "diamond_onion", \
                                 "diamond_onion_outer_r", "timesteps"]
@@ -167,8 +168,9 @@ def store_as_hdf(dir : str, filename : str, bins : int, run_group : str = "aireb
     written_files           = []
 
     for run_id in range(len(run_data)):
-        if run_data.loc[run_id]["dumpfile"] != '/mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_airebo_m/grid_3_35/2000K_8x8x8':
-            continue
+        #if run_data.loc[run_id]["dumpfile"] != '/mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_airebo_m/grid_3_35/2000K_8x8x8':
+        #    print(f"Skipping file: {run_data['dumpfile'][run_id]}.")
+        #    continue
         if run_data.loc[run_id]['cells'] != 8:
             logger.debug(f"Skipping file: {run_data['dumpfile'][run_id]} because it does not have 8x8x8 cells")
             print(f"Skipping file because it does not have 8x8x8 cells")
@@ -206,7 +208,7 @@ def store_as_hdf(dir : str, filename : str, bins : int, run_group : str = "aireb
         f.close()
         logger.debug(f'Written data to file {hdf_file + ".h5"}')
     print(f'Done with all runs. Combining hdf5 files.')
-    #combine_hdf5(dir + filename + '.h5', written_files, run_group)
+    combine_hdf5(dir + filename + '.h5', written_files, run_group)
 
 def load_hdf(filename : str) -> [pd.DataFrame, dict] :
     """
