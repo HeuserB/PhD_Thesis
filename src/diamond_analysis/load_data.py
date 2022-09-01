@@ -134,22 +134,49 @@ def merge_quad23(run, dir_data, q2_ai, q3_ai,q2_mask,q3_mask):
     merged_xy = merge_four_quads([np.array(r_q2_result1d),np.array(r_q3_result1d)], scale=[quad_scale[3],quad_scale[2]])
     np.savetxt(f"../../.data_LW03/lineouts/r{run}_Q23.xy",merged_xy.T)
 
-def merge_SACLA(run, dir_data, q_ai,mask):
+def write_SACLA_lineout(run, shot_id, dir_data, q_ai, mask, ref_id):
     pattern_file    =   "fpd_$run.tif"
-    file = dir_data + "/" + re.sub(r'\$run',str(run),pattern_file)
+    file            = dir_data + "/" + re.sub(r'\$run',str(shot_id),pattern_file)
+    ref_file        = dir_data + "/" + re.sub(r'\$run',str(ref_id),pattern_file)
     try:
         data = imageio.imread(file)
         data = np.flipud(data)
+        ref = imageio.imread(ref_file)
+        ref = np.flipud(ref)
     except:
-        print(file)
-        print("No such file!")
+        print(file,ref_file)
+        print("No such files!")
 
-    r_result1d = q_ai.integrate1d(data,
-                    npt=1000,
-                    method='csr',
-                    unit='2th_deg',
-                    correctSolidAngle=True,
-                    polarization_factor=0.99,
-                    mask=mask)
+    r_result1d      = q_ai.integrate1d(data,
+                        npt=1000,
+                        method='csr',
+                        unit='2th_deg',
+                        correctSolidAngle=True,
+                        polarization_factor=0.99,
+                        mask=mask)
+    ref_result1d    = q_ai.integrate1d(ref,
+                        npt=1000,
+                        method='csr',
+                        unit='2th_deg',
+                        correctSolidAngle=True,
+                        polarization_factor=0.99,
+                        mask=mask)
 
-    np.savetxt(f"../../.data_SACLA/lineouts/r{run}.xy",r_result1d.T)
+    script_dir = os.path.dirname(__file__)
+
+    np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}.xy") ,np.array(r_result1d).T)
+    np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_ref.xy"),np.array(ref_result1d).T)
+
+def load_SACLA(run, data_dir='../../.data_SACLA/lineouts/',theta_min=0.,theta_max=75.):
+    try:
+        run_data        = np.loadtxt(f"{data_dir}r{str(run)}.xy")
+    except:
+        print(f"Run data for run {run} does not exist in directory {data_dir}!")
+    try:
+        ref_data        = np.loadtxt(f"{data_dir}r{str(run)}_ref.xy")
+    except:
+        print(f"Reference data for run {run} does not exist in directory {data_dir}!")
+    
+    mask       = np.logical_and(run_data[:,0] > theta_min,run_data[:,0] < theta_max)
+
+    return run_data[mask], ref_data[mask]
