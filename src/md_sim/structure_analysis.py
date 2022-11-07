@@ -228,6 +228,7 @@ def load_hdf(filename : str) -> [pd.DataFrame, dict] :
         #metadata_df         = pd.DataFrame(data=metadata.T, columns=metadata_keys)
         run_data_dic        = {}
         for key in run_keys:
+            logger.debug(f'Processing key: {key}')
             metadata_keys       = list(group[key].attrs.keys())
             metadata            = np.array([[group[key].attrs.__getitem__(attr) for attr in metadata_keys]])
             #logger.debug(f'metadata keys are: {metadata_keys} metadata shape ois {metadata}')
@@ -240,6 +241,7 @@ def load_hdf(filename : str) -> [pd.DataFrame, dict] :
                 if type(group[key][subkey]) == h5.Group:
                     #logger.debug(f'Subkey {subkey} is an hdf5 group object!')
                     subsubdict      = {}
+                    logger.debug(f'Subkey is :{subkey}')
                     for subsubkey in group[key][subkey].keys():
                         subsubdict.update({subsubkey : group[key][subkey][subsubkey][:]})
                     subdict.update({subkey : subsubdict})

@@ -20183,3 +20183,451 @@
 2022-08-29 13:13:30,284 - structure_analysis - DEBUG - Now reading structure analysis data for file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_5000K_8x8x8.h5
 2022-08-29 13:13:31,861 - structure_analysis - DEBUG - Now reading structure analysis data for file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_2000K_8x8x8.h5
 2022-08-29 13:13:34,028 - structure_analysis - DEBUG - All files were written to the new HDF5 file /mnt/TOSHIBA_EXT/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop.h5
+2022-09-09 11:25:38,396 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_5000K_8x8x8.h5
+2022-09-09 11:25:39,070 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_5000K_8x8x8.h5
+2022-09-09 11:25:39,724 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_3000K_8x8x8.h5
+2022-09-09 11:25:41,900 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_2000K_8x8x8.h5
+2022-09-09 11:25:42,523 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_1000K_8x8x8.h5
+2022-09-09 11:25:44,423 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop.h5
+2022-09-09 11:25:52,385 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_1000K_8x8x8.h5
+2022-09-09 11:25:52,917 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_2000K_8x8x8.h5
+2022-09-09 11:25:53,590 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_4000K_8x8x8.h5
+2022-09-09 11:25:55,549 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_6000K_8x8x8.h5
+2022-09-09 11:25:55,615 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_4000K_8x8x8.h5
+2022-09-09 11:25:56,232 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_2000K_8x8x8.h5
+2022-09-09 11:26:00,451 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_1000K_8x8x8.h5
+2022-09-09 11:26:01,075 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_5000K_8x8x8.h5
+2022-09-09 11:26:01,627 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_3000K_8x8x8.h5
+2022-09-09 11:26:04,233 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_5000K_8x8x8.h5
+2022-09-09 11:26:04,837 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_3000K_8x8x8.h5
+2022-09-09 11:26:05,461 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_4000K_8x8x8.h5
+2022-09-09 11:26:06,068 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_3000K_8x8x8.h5
+2022-09-09 11:26:08,265 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_4000K_8x8x8.h5
+2022-09-09 11:26:10,293 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_1000K_8x8x8.h5
+2022-09-09 11:26:10,902 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_2000K_8x8x8.h5
+2022-09-09 11:26:11,776 - structure_analysis - DEBUG - All files were written to the new HDF5 file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop.h5
+2022-09-09 11:27:38,797 - structure_analysis - DEBUG - Found group key: lcbop
+2022-09-09 11:29:36,602 - structure_analysis - DEBUG - Found group key: lcbop
+2022-09-09 11:30:28,833 - structure_analysis - DEBUG - Found group key: airebo_m
+2022-09-09 11:34:39,352 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_5000K_8x8x8.h5
+2022-09-09 11:34:39,961 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_5000K_8x8x8.h5
+2022-09-09 11:34:40,549 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_3000K_8x8x8.h5
+2022-09-09 11:34:43,136 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_2000K_8x8x8.h5
+2022-09-09 11:34:43,792 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_1000K_8x8x8.h5
+2022-09-09 11:34:44,431 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_1000K_8x8x8.h5
+2022-09-09 11:34:44,975 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_2000K_8x8x8.h5
+2022-09-09 11:34:47,671 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_4000K_8x8x8.h5
+2022-09-09 11:34:48,204 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_6000K_8x8x8.h5
+2022-09-09 11:34:48,262 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_4000K_8x8x8.h5
+2022-09-09 11:34:48,812 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_2000K_8x8x8.h5
+2022-09-09 11:34:49,531 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_1000K_8x8x8.h5
+2022-09-09 11:34:50,166 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_5000K_8x8x8.h5
+2022-09-09 11:34:53,175 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_3000K_8x8x8.h5
+2022-09-09 11:34:54,407 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_5000K_8x8x8.h5
+2022-09-09 11:34:55,006 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_3000K_8x8x8.h5
+2022-09-09 11:34:55,619 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_4000K_8x8x8.h5
+2022-09-09 11:34:58,637 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_3000K_8x8x8.h5
+2022-09-09 11:34:59,310 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_4000K_8x8x8.h5
+2022-09-09 11:34:59,916 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_1000K_8x8x8.h5
+2022-09-09 11:35:00,561 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_2000K_8x8x8.h5
+2022-09-09 11:35:01,413 - structure_analysis - DEBUG - All files were written to the new HDF5 file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop.h5
+2022-09-09 11:36:39,837 - structure_analysis - DEBUG - Found group key: lcbop
+2022-09-09 11:36:39,930 - structure_analysis - DEBUG - Processing key: 3_35_1000K_8x8x8
+2022-09-09 11:36:41,112 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:41,116 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:41,122 - structure_analysis - DEBUG - Processing key: 3_35_2000K_8x8x8
+2022-09-09 11:36:42,315 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:42,320 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:42,325 - structure_analysis - DEBUG - Processing key: 3_35_3000K_8x8x8
+2022-09-09 11:36:43,755 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:43,761 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:43,769 - structure_analysis - DEBUG - Processing key: 3_35_4000K_8x8x8
+2022-09-09 11:36:44,664 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:44,671 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:44,679 - structure_analysis - DEBUG - Processing key: 3_35_5000K_8x8x8
+2022-09-09 11:36:45,992 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:45,998 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:46,005 - structure_analysis - DEBUG - Processing key: 3_45_1000K_8x8x8
+2022-09-09 11:36:46,889 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:46,893 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:46,898 - structure_analysis - DEBUG - Processing key: 3_45_2000K_8x8x8
+2022-09-09 11:36:47,721 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:47,725 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:47,731 - structure_analysis - DEBUG - Processing key: 3_45_3000K_8x8x8
+2022-09-09 11:36:48,515 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:48,520 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:48,525 - structure_analysis - DEBUG - Processing key: 3_45_4000K_8x8x8
+2022-09-09 11:36:49,507 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:49,512 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:49,520 - structure_analysis - DEBUG - Processing key: 3_45_5000K_8x8x8
+2022-09-09 11:36:50,344 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:50,348 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:50,353 - structure_analysis - DEBUG - Processing key: 3_4_1000K_8x8x8
+2022-09-09 11:36:51,266 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:51,271 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:51,277 - structure_analysis - DEBUG - Processing key: 3_4_2000K_8x8x8
+2022-09-09 11:36:52,122 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:52,129 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:52,134 - structure_analysis - DEBUG - Processing key: 3_4_3000K_8x8x8
+2022-09-09 11:36:52,958 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:52,964 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:52,969 - structure_analysis - DEBUG - Processing key: 3_4_4000K_8x8x8
+2022-09-09 11:36:53,753 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:53,758 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:53,765 - structure_analysis - DEBUG - Processing key: 3_4_5000K_8x8x8
+2022-09-09 11:36:54,669 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:54,673 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:54,679 - structure_analysis - DEBUG - Processing key: 3_5_1000K_8x8x8
+2022-09-09 11:36:55,604 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:55,609 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:55,614 - structure_analysis - DEBUG - Processing key: 3_5_2000K_8x8x8
+2022-09-09 11:36:56,707 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:56,713 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:56,721 - structure_analysis - DEBUG - Processing key: 3_5_3000K_8x8x8
+2022-09-09 11:36:58,393 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:58,399 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:58,407 - structure_analysis - DEBUG - Processing key: 3_5_4000K_8x8x8
+2022-09-09 11:36:59,811 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:36:59,817 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:36:59,823 - structure_analysis - DEBUG - Processing key: 3_5_5000K_8x8x8
+2022-09-09 11:37:00,930 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:37:00,936 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:37:00,943 - structure_analysis - DEBUG - Processing key: 3_5_6000K_8x8x8
+2022-09-09 11:37:01,070 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:37:01,077 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:49:33,949 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_3000K_8x8x8.h5
+2022-09-09 11:49:34,825 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_2000K_8x8x8.h5
+2022-09-09 11:49:36,869 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_1000K_8x8x8.h5
+2022-09-09 11:49:38,075 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_1000K_8x8x8.h5
+2022-09-09 11:49:39,442 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_2000K_8x8x8.h5
+2022-09-09 11:49:40,336 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_4000K_8x8x8.h5
+2022-09-09 11:49:42,428 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_45_4000K_8x8x8.h5
+2022-09-09 11:49:44,067 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_2000K_8x8x8.h5
+2022-09-09 11:49:44,975 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_1000K_8x8x8.h5
+2022-09-09 11:49:45,607 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_3000K_8x8x8.h5
+2022-09-09 11:49:46,294 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_3000K_8x8x8.h5
+2022-09-09 11:49:47,718 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_4000K_8x8x8.h5
+2022-09-09 11:49:50,347 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_5_3000K_8x8x8.h5
+2022-09-09 11:49:52,188 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_4000K_8x8x8.h5
+2022-09-09 11:49:53,378 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_4_1000K_8x8x8.h5
+2022-09-09 11:49:54,559 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop_3_35_2000K_8x8x8.h5
+2022-09-09 11:49:55,370 - structure_analysis - DEBUG - All files were written to the new HDF5 file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_lcbop/lcbop.h5
+2022-09-09 11:50:16,705 - structure_analysis - DEBUG - Found group key: lcbop
+2022-09-09 11:50:16,711 - structure_analysis - DEBUG - Processing key: 3_35_1000K_8x8x8
+2022-09-09 11:50:17,849 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:17,855 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:17,863 - structure_analysis - DEBUG - Processing key: 3_35_2000K_8x8x8
+2022-09-09 11:50:18,692 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:18,697 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:18,703 - structure_analysis - DEBUG - Processing key: 3_35_3000K_8x8x8
+2022-09-09 11:50:19,670 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:19,675 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:19,681 - structure_analysis - DEBUG - Processing key: 3_35_4000K_8x8x8
+2022-09-09 11:50:20,793 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:20,799 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:20,805 - structure_analysis - DEBUG - Processing key: 3_45_1000K_8x8x8
+2022-09-09 11:50:21,853 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:21,859 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:21,865 - structure_analysis - DEBUG - Processing key: 3_45_2000K_8x8x8
+2022-09-09 11:50:23,811 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:23,819 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:23,828 - structure_analysis - DEBUG - Processing key: 3_45_3000K_8x8x8
+2022-09-09 11:50:24,814 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:24,819 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:24,825 - structure_analysis - DEBUG - Processing key: 3_45_4000K_8x8x8
+2022-09-09 11:50:26,226 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:26,230 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:26,236 - structure_analysis - DEBUG - Processing key: 3_4_1000K_8x8x8
+2022-09-09 11:50:27,091 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:27,095 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:27,101 - structure_analysis - DEBUG - Processing key: 3_4_2000K_8x8x8
+2022-09-09 11:50:28,067 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:28,071 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:28,076 - structure_analysis - DEBUG - Processing key: 3_4_3000K_8x8x8
+2022-09-09 11:50:29,181 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:29,186 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:29,191 - structure_analysis - DEBUG - Processing key: 3_4_4000K_8x8x8
+2022-09-09 11:50:30,439 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:30,447 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:30,455 - structure_analysis - DEBUG - Processing key: 3_5_1000K_8x8x8
+2022-09-09 11:50:31,783 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:31,791 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:31,798 - structure_analysis - DEBUG - Processing key: 3_5_2000K_8x8x8
+2022-09-09 11:50:32,734 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:32,738 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:32,745 - structure_analysis - DEBUG - Processing key: 3_5_3000K_8x8x8
+2022-09-09 11:50:34,007 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:34,013 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:50:34,045 - structure_analysis - DEBUG - Processing key: 3_5_4000K_8x8x8
+2022-09-09 11:50:35,276 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 11:50:35,281 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 11:55:51,500 - structure_analysis - DEBUG - Processing file 1/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_40/2000K_8x8x8
+2022-09-09 12:01:47,072 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:01:47,084 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:01:47,087 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:01:47,090 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:01:47,092 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:01:47,094 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:01:47,095 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:01:47,098 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:01:47,099 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:01:47,105 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:01:47,107 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:01:47,290 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_4_2000K_8x8x8.h5
+2022-09-09 12:01:47,368 - structure_analysis - DEBUG - Processing file 2/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_40/1000K_8x8x8
+2022-09-09 12:07:59,728 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:07:59,745 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:07:59,747 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:07:59,749 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:07:59,751 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:07:59,753 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:07:59,754 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:07:59,756 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:07:59,758 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:07:59,763 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:07:59,765 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:08:00,076 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_4_1000K_8x8x8.h5
+2022-09-09 12:08:00,168 - structure_analysis - DEBUG - Processing file 3/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_40/3000K_8x8x8
+2022-09-09 12:13:05,766 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:13:05,775 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:13:05,777 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:13:05,779 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:13:05,781 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:13:05,783 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:13:05,785 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:13:05,787 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:13:05,789 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:13:05,793 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:13:05,795 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:13:05,979 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_4_3000K_8x8x8.h5
+2022-09-09 12:13:06,058 - structure_analysis - DEBUG - Processing file 4/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_50/2000K_8x8x8
+2022-09-09 12:19:05,588 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:19:05,598 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:19:05,601 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:19:05,603 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:19:05,605 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:19:05,607 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:19:05,609 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:19:05,610 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:19:05,613 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:19:05,618 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:19:05,620 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:19:05,853 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_5_2000K_8x8x8.h5
+2022-09-09 12:19:05,920 - structure_analysis - DEBUG - Processing file 5/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_50/1000K_8x8x8
+2022-09-09 12:25:06,739 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:25:06,748 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:25:06,750 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:25:06,753 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:25:06,754 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:25:06,755 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:25:06,756 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:25:06,758 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:25:06,759 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:25:06,763 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:25:06,764 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:25:06,923 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_5_1000K_8x8x8.h5
+2022-09-09 12:25:06,927 - structure_analysis - DEBUG - Processing file 6/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_50/3000K_8x8x8
+2022-09-09 12:30:23,673 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:30:23,683 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:30:23,686 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:30:23,688 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:30:23,689 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:30:23,691 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:30:23,692 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:30:23,693 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:30:23,694 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:30:23,698 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:30:23,700 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:30:23,903 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_5_3000K_8x8x8.h5
+2022-09-09 12:30:23,970 - structure_analysis - DEBUG - Processing file 7/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_35/2000K_8x8x8
+2022-09-09 12:35:59,146 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:35:59,157 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:35:59,159 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:35:59,160 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:35:59,162 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:35:59,165 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:35:59,167 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:35:59,169 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:35:59,171 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:35:59,176 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:35:59,178 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:35:59,344 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_35_2000K_8x8x8.h5
+2022-09-09 12:35:59,348 - structure_analysis - DEBUG - Processing file 8/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_35/1000K_8x8x8
+2022-09-09 12:42:01,600 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:42:01,609 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:42:01,612 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:42:01,613 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:42:01,616 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:42:01,618 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:42:01,620 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:42:01,623 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:42:01,625 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:42:01,631 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:42:01,633 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:42:01,806 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_35_1000K_8x8x8.h5
+2022-09-09 12:42:01,811 - structure_analysis - DEBUG - Processing file 9/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_35/3000K_8x8x8
+2022-09-09 12:47:00,448 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:47:00,460 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:47:00,463 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:47:00,464 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:47:00,465 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:47:00,467 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:47:00,468 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:47:00,471 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:47:00,473 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:47:00,477 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:47:00,480 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:47:00,640 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_35_3000K_8x8x8.h5
+2022-09-09 12:47:00,645 - structure_analysis - DEBUG - Processing file 10/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_45/2000K_8x8x8
+2022-09-09 12:52:56,609 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:52:56,620 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:52:56,622 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:52:56,624 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:52:56,625 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:52:56,627 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:52:56,629 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:52:56,631 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:52:56,634 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:52:56,638 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:52:56,640 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:52:56,838 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_45_2000K_8x8x8.h5
+2022-09-09 12:52:56,842 - structure_analysis - DEBUG - Processing file 11/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_45/1000K_8x8x8
+2022-09-09 12:58:59,891 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 12:58:59,902 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 12:58:59,905 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 12:58:59,906 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 12:58:59,908 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 12:58:59,910 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 12:58:59,912 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 12:58:59,914 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 12:58:59,916 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 12:58:59,920 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 12:58:59,922 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 12:59:00,075 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_45_1000K_8x8x8.h5
+2022-09-09 12:59:00,079 - structure_analysis - DEBUG - Processing file 12/12 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/grid_3_45/3000K_8x8x8
+2022-09-09 13:04:12,557 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-09-09 13:04:12,568 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-09-09 13:04:12,570 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-09-09 13:04:12,571 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-09-09 13:04:12,574 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-09-09 13:04:12,576 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-09-09 13:04:12,579 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-09-09 13:04:12,581 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-09-09 13:04:12,583 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-09-09 13:04:12,588 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-09-09 13:04:12,590 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-09-09 13:04:12,757 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_45_3000K_8x8x8.h5
+2022-09-09 13:04:12,840 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_4_2000K_8x8x8.h5
+2022-09-09 13:04:13,495 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_4_1000K_8x8x8.h5
+2022-09-09 13:04:15,595 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_4_3000K_8x8x8.h5
+2022-09-09 13:04:16,206 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_5_2000K_8x8x8.h5
+2022-09-09 13:04:17,117 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_5_1000K_8x8x8.h5
+2022-09-09 13:04:18,784 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_5_3000K_8x8x8.h5
+2022-09-09 13:04:20,177 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_35_2000K_8x8x8.h5
+2022-09-09 13:04:21,805 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_35_1000K_8x8x8.h5
+2022-09-09 13:04:23,184 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_35_3000K_8x8x8.h5
+2022-09-09 13:04:24,775 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_45_2000K_8x8x8.h5
+2022-09-09 13:04:26,635 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_45_1000K_8x8x8.h5
+2022-09-09 13:04:29,878 - structure_analysis - DEBUG - Now reading structure analysis data for file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip_3_45_3000K_8x8x8.h5
+2022-09-09 13:04:30,160 - structure_analysis - DEBUG - All files were written to the new HDF5 file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/free_expansion_edip/edip.h5
+2022-09-09 13:17:03,895 - structure_analysis - DEBUG - Found group key: edip
+2022-09-09 13:17:03,946 - structure_analysis - DEBUG - Processing key: 3_35_1000K_8x8x8
+2022-09-09 13:17:05,552 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:05,565 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:05,583 - structure_analysis - DEBUG - Processing key: 3_35_2000K_8x8x8
+2022-09-09 13:17:07,562 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:07,572 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:07,591 - structure_analysis - DEBUG - Processing key: 3_35_3000K_8x8x8
+2022-09-09 13:17:08,740 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:08,764 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:08,795 - structure_analysis - DEBUG - Processing key: 3_45_1000K_8x8x8
+2022-09-09 13:17:10,355 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:10,363 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:10,371 - structure_analysis - DEBUG - Processing key: 3_45_2000K_8x8x8
+2022-09-09 13:17:11,630 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:11,637 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:11,648 - structure_analysis - DEBUG - Processing key: 3_45_3000K_8x8x8
+2022-09-09 13:17:12,539 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:12,544 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:12,551 - structure_analysis - DEBUG - Processing key: 3_4_1000K_8x8x8
+2022-09-09 13:17:13,693 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:13,697 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:13,703 - structure_analysis - DEBUG - Processing key: 3_4_2000K_8x8x8
+2022-09-09 13:17:14,596 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:14,601 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:14,607 - structure_analysis - DEBUG - Processing key: 3_4_3000K_8x8x8
+2022-09-09 13:17:15,766 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:15,771 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:15,779 - structure_analysis - DEBUG - Processing key: 3_5_1000K_8x8x8
+2022-09-09 13:17:17,068 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:17,073 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:17,078 - structure_analysis - DEBUG - Processing key: 3_5_2000K_8x8x8
+2022-09-09 13:17:18,165 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:18,170 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:17:18,176 - structure_analysis - DEBUG - Processing key: 3_5_3000K_8x8x8
+2022-09-09 13:17:19,499 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:17:19,504 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:21,254 - structure_analysis - DEBUG - Found group key: lcbop
+2022-09-09 13:26:21,286 - structure_analysis - DEBUG - Processing key: 3_35_1000K_8x8x8
+2022-09-09 13:26:25,321 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:25,329 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:25,337 - structure_analysis - DEBUG - Processing key: 3_35_2000K_8x8x8
+2022-09-09 13:26:27,821 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:27,831 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:27,849 - structure_analysis - DEBUG - Processing key: 3_35_3000K_8x8x8
+2022-09-09 13:26:30,258 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:30,266 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:30,282 - structure_analysis - DEBUG - Processing key: 3_35_4000K_8x8x8
+2022-09-09 13:26:31,571 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:31,578 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:31,585 - structure_analysis - DEBUG - Processing key: 3_45_1000K_8x8x8
+2022-09-09 13:26:33,006 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:33,010 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:33,017 - structure_analysis - DEBUG - Processing key: 3_45_2000K_8x8x8
+2022-09-09 13:26:34,357 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:34,362 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:34,371 - structure_analysis - DEBUG - Processing key: 3_45_3000K_8x8x8
+2022-09-09 13:26:35,523 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:35,528 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:35,537 - structure_analysis - DEBUG - Processing key: 3_45_4000K_8x8x8
+2022-09-09 13:26:37,341 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:37,349 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:37,361 - structure_analysis - DEBUG - Processing key: 3_4_1000K_8x8x8
+2022-09-09 13:26:39,015 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:39,021 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:39,038 - structure_analysis - DEBUG - Processing key: 3_4_2000K_8x8x8
+2022-09-09 13:26:41,732 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:41,738 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:41,746 - structure_analysis - DEBUG - Processing key: 3_4_3000K_8x8x8
+2022-09-09 13:26:44,494 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:44,500 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:44,510 - structure_analysis - DEBUG - Processing key: 3_4_4000K_8x8x8
+2022-09-09 13:26:45,525 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:45,530 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:45,537 - structure_analysis - DEBUG - Processing key: 3_5_1000K_8x8x8
+2022-09-09 13:26:46,368 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:46,373 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:46,379 - structure_analysis - DEBUG - Processing key: 3_5_2000K_8x8x8
+2022-09-09 13:26:47,306 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:47,312 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:47,320 - structure_analysis - DEBUG - Processing key: 3_5_3000K_8x8x8
+2022-09-09 13:26:48,403 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:48,407 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-09-09 13:26:48,415 - structure_analysis - DEBUG - Processing key: 3_5_4000K_8x8x8
+2022-09-09 13:26:49,522 - structure_analysis - DEBUG - Subkey is :thermo_equilibration
+2022-09-09 13:26:49,528 - structure_analysis - DEBUG - Subkey is :thermo_expansion
+2022-10-04 12:39:45,742 - structure_analysis - DEBUG - All files were written to the new HDF5 file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/strain_expansion/edip/edip.h5
+2022-10-04 14:04:12,001 - structure_analysis - DEBUG - Processing file 1/20 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/strain_expansion/edip/grid_3_30/3000K_8x8x8_100ns.dump
+2022-10-04 15:06:48,896 - structure_analysis - DEBUG - Added column lattice_constant to the main attributes
+2022-10-04 15:06:48,946 - structure_analysis - DEBUG - Added column temperature to the main attributes
+2022-10-04 15:06:48,967 - structure_analysis - DEBUG - Added column cells to the main attributes
+2022-10-04 15:06:48,969 - structure_analysis - DEBUG - Added column timestep_eq to the main attributes
+2022-10-04 15:06:48,971 - structure_analysis - DEBUG - Added column timestep_ex to the main attributes
+2022-10-04 15:06:48,973 - structure_analysis - DEBUG - Added column drift to the main attributes
+2022-10-04 15:06:48,975 - structure_analysis - DEBUG - Added column n_atoms to the main attributes
+2022-10-04 15:06:48,977 - structure_analysis - DEBUG - Added column dE to the main attributes
+2022-10-04 15:06:48,980 - structure_analysis - DEBUG - Added column dumpfile to the main attributes
+2022-10-04 15:06:48,996 - structure_analysis - DEBUG - Added column run_steps_eq to the main attributes
+2022-10-04 15:06:48,998 - structure_analysis - DEBUG - Added column run_steps_ex to the main attributes
+2022-10-04 15:07:13,021 - structure_analysis - DEBUG - Written data to file /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/strain_expansion/edip/edip_3_3_3000K_8x8x8_100ns.dump.h5
+2022-10-04 15:07:13,133 - structure_analysis - DEBUG - Processing file 2/20 with name /media/benjamin/BenDrive/Nextcloud/Work/W_PhD/W_PhD_Analysis/Simulations/LAMMPS/strain_expansion/edip/grid_3_30/5000K_8x8x8_100ns.dump

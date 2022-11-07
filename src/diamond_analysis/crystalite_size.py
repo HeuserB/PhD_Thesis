@@ -1,6 +1,3 @@
-from ipaddress import summarize_address_range
-from pyexpat.errors import XML_ERROR_INVALID_TOKEN
-import wave
 import numpy as np
 
 from lmfit.models import LinearModel
@@ -12,19 +9,36 @@ import matplotlib.pyplot as plt
 def crystalite_size(fit : ModelResult, wavelength : float, K : float):
     ### FWHM of Lorentzian peak is given by 2*sigma
     beta1, beta2                    = np.deg2rad(fit.params["C111_sigma"].value), np.deg2rad(fit.params["C220_sigma"].value)
-    beta1_err, beta2_err            = np.deg2rad(fit.params["C111_sigma"].stderr), np.deg2rad(fit.params["C220_sigma"].stderr)
-    y_values                        = np.array([np.log(beta1),np.log(beta2)])
-    y_err                           = np.array([np.log(beta1_err),np.log(beta2_err)])
-    
-    theta1, theta2                  = fit.params["C111_center"].value/2., fit.params["C220_center"].value/2.
-    print(f'Thetas are: {theta1} and {theta2}')
-    theta1_err, theta2_err          = fit.params["C111_center"].stderr/2., fit.params["C220_center"].stderr/2.
-    print(f'Theta errors are: {theta1_err} and {theta2_err}')
+    try:
+      beta3       = np.deg2rad(fit.params["C311_sigma"].value)
+      peaks       = 3
+    except:
+      peaks       = 2
 
-    size_1                          = K * wavelength / (beta1 * np.cos(np.deg2rad(theta1)))
-    size_2                          = K * wavelength / (beta1 * np.cos(np.deg2rad(theta2)))
-    sizes                           = np.array([size_1,size_2]) / 2.
-    print(f"Crystallite size of is: %.2f and %.2f " %(sizes[0]*1e9,sizes[1]*1e9))
+    #beta1_err, beta2_err            = np.deg2rad(fit.params["C111_sigma"].stderr), np.deg2rad(fit.params["C220_sigma"].stderr)
+    if peaks == 3:
+      y_values                        = np.array([np.log(beta1),np.log(beta2),np.log(beta3)])
+      theta1, theta2,theta3           = fit.params["C111_center"].value/2., fit.params["C220_center"].value/2., fit.params["C311_center"].value/2.
+      print(f'Thetas are: {theta1} and {theta2} and {theta3}')
+      size_1                          = K * wavelength / (beta1 * np.cos(np.deg2rad(theta1)))
+      size_2                          = K * wavelength / (beta2 * np.cos(np.deg2rad(theta2)))
+      size_3                          = K * wavelength / (beta3 * np.cos(np.deg2rad(theta3)))
+      sizes                           = np.array([size_1,size_2,size_3]) / 2.
+      print(f"Crystallite size of is: %.2f and %.2f and %.2f " %(sizes[0]*1e9,sizes[1]*1e9,sizes[2]*1e9))
+    else:
+      y_values                        = np.array([np.log(beta1),np.log(beta2)])
+      theta1, theta2                  = fit.params["C111_center"].value/2., fit.params["C220_center"].value/2.
+      print(f'Thetas are: {theta1} and {theta2}')
+      size_1                          = K * wavelength / (beta1 * np.cos(np.deg2rad(theta1)))
+      size_2                          = K * wavelength / (beta2 * np.cos(np.deg2rad(theta2)))
+      sizes                           = np.array([size_1,size_2]) / 2.
+      print(f"Crystallite size of is: %.2f and %.2f " %(sizes[0]*1e9,sizes[1]*1e9))
+    #y_err                           = np.array([np.log(beta1_err),np.log(beta2_err)])
+    
+    #theta1_err, theta2_err          = fit.params["C111_center"].stderr/2., fit.params["C220_center"].stderr/2.
+    #print(f'Theta errors are: {theta1_err} and {theta2_err}')
+
+    
     return sizes
 
 

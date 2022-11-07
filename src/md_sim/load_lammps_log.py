@@ -50,6 +50,9 @@ def load_thermo(file : str):
         #print(f"All runs have the same timestep timesteps: {dt}")
     elif len(dt) == num_of_sets:
         print(f"Different timesteps are {dt}")
+    elif len(dt)==0:
+        print(f"Timestep retreived from read dump. Manually setting to 0.0001 ps")
+        dt          =    0.0001
     else:
         print(f"Timesteps do not match run numbers!")
         return
@@ -129,7 +132,7 @@ def load_all_runs(dir : str):
     :return:                pandas dataframe with all run information
     """
     run_pattern             = re.compile('grid_[0-9]_[0-9]+')
-    subrun_pattern          = re.compile('([0-9]+)K_([0-9]*x){2}([0-9]+).log$')
+    subrun_pattern          = re.compile('([0-9]+)K_([0-9]*x){2}([0-9]+)(_[0-9]+ns)*.log')
     grid_pattern            = re.compile('([0-9])_([0-9]+)')
     dirs                    = [d for d in os.listdir(dir) if os.path.isdir(os.path.join(dir, d))]
     run_dirs, grid_const    = [], {}
@@ -143,13 +146,19 @@ def load_all_runs(dir : str):
             tmp             = (grid_pattern.findall(d))[0]
             a               = float(tmp[0]) + float(tmp[1])*1e-2
             grid_const.update({d:a})
-    
+
     for d in run_dirs:
         subdir              = os.path.join(dir, d)
         files               = os.listdir(subdir)
         for file in files:
+            strain_time_pattern         =   re.compile('.*100ns.*')
+            if strain_time_pattern.match(file):
+                pass
+            else:
+                continue
             if subrun_pattern.match(file):
-                dump_file                   = re.sub('.log','',file)
+                dump_file                   = re.sub('.log','.dump',file)
+                print(dump_file)
                 T, cells                    = int(subrun_pattern.findall(file)[0][0]), int(re.split('x',subrun_pattern.findall(file)[0][1])[0])
                 dfs, dt, n_atoms, run_steps = load_thermo(os.path.join(subdir,file))
                 thermo_dfs.append(dfs)
@@ -163,5 +172,5 @@ def load_all_runs(dir : str):
                     data.loc[len(data.index)]   = [grid_const[d],T, cells, dt[0], dt[1], drift, n_atoms, \
                                             (dfs[0]['TotEng'].values)[20] - (dfs[0]['TotEng'].values)[-1], os.path.join(subdir,dump_file),\
                                             run_steps[0], run_steps[1]]
-                #print(f"Directory: {d} file : {file}, grid constant: {grid_const[d]} T: {T}, cells: {cells}")
+                print(f"Directory: {d} file : {file}, grid constant: {grid_const[d]} T: {T}, cells: {cells}")
     return data, thermo_dfs

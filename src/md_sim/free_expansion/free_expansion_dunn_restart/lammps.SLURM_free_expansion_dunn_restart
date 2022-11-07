@@ -1,0 +1,13 @@
+#!/bin/bash
+#########################################################################################
+#Simple Testcase LAMMPS
+##########################################################################################
+
+
+#SBATCH -J $tempK_$n_cellx$n_cellx$n_cell_free_expension_dunn_restart
+#SBATCH --nodes=8
+export OMP_NUM_THREADS=1
+
+module load LAMMPS/27052021
+mpirun -n 8 lmp -in $infile
+exit 0

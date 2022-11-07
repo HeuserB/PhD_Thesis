@@ -1,0 +1,67 @@
+log $logfile
+
+units metal
+dimension	3
+boundary	f f f
+
+neighbor	0.3 bin
+neigh_modify	delay 5
+
+atom_style full
+
+variable grid_constant equal $grid_constant
+variable n_cells equal $n_cells
+variable r_max equal "v_grid_constant*v_n_cells/2"
+variable r_min equal "(-1)*v_grid_constant*v_n_cells/2"
+variable dump_rate equal 125 # the rate in timestep that atoms are dumped
+variable run_steps_eq equal 50000 # time steps for the equilibration phase
+variable expansion_time	equal $expansion_time
+variable timestep equal 0.0001 #timestep in picoseconds
+variable run_steps_ex equal "v_expansion_time/v_timestep" # time steps for the expansion phase
+
+variable erate equal "(3.5/v_grid_constant-1)/(v_expansion_time)" # expand to diamond density over the entire expansion time up to ambient density
+
+# create geometry
+region		box block ${r_min} ${r_max} ${r_min} ${r_max} ${r_min} ${r_max}
+create_box	1 box
+
+variable xmin equal "xlo"
+variable xmax equal "xhi"
+variable ymin equal "ylo"
+variable ymax equal "yhi"
+variable zmin equal "zlo" 
+variable zmax equal "zhi"
+
+# create reflective walls to confine the ND cube
+fix walls all wall/reflect xlo v_xmin xhi v_xmax ylo v_ymin yhi v_ymax zlo v_zmin zhi v_zmax
+
+mass		1 12.0
+
+pair_style $potential
+pair_coeff * * $parameter_file C
+
+variable last_step equal "v_run_steps_ex + v_run_steps_eq"
+read_dump $old_dump ${last_step} x y z vx vz vy fx fz fy add yes
+
+dump    lmp_dump_vel all custom ${dump_rate} $dumpfile id type x y z vx vz vy fx fz fy 
+thermo		50 
+thermo_modify	flush yes
+
+fix 2 all nve
+
+variable volume equal "vol" # Volume Angstroms^3
+variable energy equal "etotal" # ENERGY IN EV
+variable press_GPa equal "press/10000" # PRESSURE IN GPa
+variable volume_work equal "((press/10000)*vol)/160.21" # MECHANICAL WORK W = PV in EV 
+
+thermo_style custom step temp etotal press vol v_press_GPa v_volume_work
+thermo_modify lost ignore flush yes
+
+fix expandbox all deform 1 x erate ${erate} y erate ${erate} z erate ${erate} remap x
+
+run   100000  
+
+unfix 2
+unfix expandbox
+unfix walls
+clear

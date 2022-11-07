@@ -1,0 +1,14 @@
+#!/bin/bash
+#########################################################################################
+#Simple Testcase LAMMPS
+##########################################################################################
+
+
+#SBATCH -J strain_expansion$tempK_$n_cellx$n_cellx$n_cell_$potential
+#SBATCH --output=/data/bh326/LAMMPS/strain_expansion/$potential/grid_$grid_constant/$tempK_$n_cellx$n_cellx$n_cell_$expansion_timens.out
+#SBATCH --nodes=1
+export OMP_NUM_THREADS=1
+
+module load LAMMPS/27052021
+mpirun -n 1 lmp -in $infile
+exit 0

@@ -154,6 +154,16 @@ def write_SACLA_lineout(run, shot_id, dir_data, q_ai, mask, ref_id):
                         correctSolidAngle=True,
                         polarization_factor=0.99,
                         mask=mask)
+
+    r_result1s_var  = q_ai.integrate1d(data,
+                        npt=1000,
+                        method='csr',
+                        unit='2th_deg',
+                        correctSolidAngle=True,
+                        polarization_factor=0.99,
+                        mask=mask,
+                        error_model = "azimuthal")
+    
     ref_result1d    = q_ai.integrate1d(ref,
                         npt=1000,
                         method='csr',
@@ -162,12 +172,23 @@ def write_SACLA_lineout(run, shot_id, dir_data, q_ai, mask, ref_id):
                         polarization_factor=0.99,
                         mask=mask)
 
+    ref_result1d_var= q_ai.integrate1d(ref,
+                        npt=1000,
+                        method='csr',
+                        unit='2th_deg',
+                        correctSolidAngle=True,
+                        polarization_factor=0.99,
+                        mask=mask,
+                        error_model = "azimuthal")
+
     script_dir = os.path.dirname(__file__)
 
-    np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}.xy") ,np.array(r_result1d).T)
+    np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}.xy") ,np.array(r_result1s_var).T)
+    #np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_var.xy") ,np.array(r_result1s_var).T)
     np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_ref.xy"),np.array(ref_result1d).T)
+    np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_ref_var.xy"),np.array(ref_result1d_var).T)
 
-def load_SACLA(run, data_dir='../../.data_SACLA/lineouts/',theta_min=0.,theta_max=75.):
+def load_SACLA(run, data_dir='../../.data_SACLA/lineouts/',theta_min=25.,theta_max=75.):
     try:
         run_data        = np.loadtxt(f"{data_dir}r{str(run)}.xy")
     except:
