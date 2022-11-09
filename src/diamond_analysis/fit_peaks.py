@@ -1,6 +1,3 @@
-from pyexpat import model
-from sys import ps1
-from turtle import width
 import numpy as np
 from load_data import *
 import matplotlib.pyplot as plt

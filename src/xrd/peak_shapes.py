@@ -4,6 +4,9 @@ def gaussian(x, amp_gauss, cen_gauss, wid_gauss):
 #    "1-d gaussian: gaussian(x, amp, cen, wid)"
       return (amp_gauss/(np.sqrt(2*np.pi)*wid_gauss)) * np.exp(-(x-cen_gauss)**2 /(2*wid_gauss**2))
 
+def background(x,a,b):
+        return a * x + b
+
 def lingaussian(x,slope,intercept,amp_gauss, cen_gauss, wid_gauss):
 #    "1-d gaussian: lingaussian(x, slope,intercept,amp, cen, wid)"
     return (slope*x+intercept+(amp_gauss/(np.sqrt(2*np.pi)*wid_gauss)) * np.exp(-(x-cen_gauss)**2 /(2*wid_gauss**2)))

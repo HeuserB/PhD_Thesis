@@ -184,7 +184,6 @@ def write_SACLA_lineout(run, shot_id, dir_data, q_ai, mask, ref_id):
     script_dir = os.path.dirname(__file__)
 
     np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}.xy") ,np.array(r_result1s_var).T)
-    #np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_var.xy") ,np.array(r_result1s_var).T)
     np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_ref.xy"),np.array(ref_result1d).T)
     np.savetxt(os.path.join(script_dir, f"../../.data_SACLA/lineouts/r{run}_ref_var.xy"),np.array(ref_result1d_var).T)
 
