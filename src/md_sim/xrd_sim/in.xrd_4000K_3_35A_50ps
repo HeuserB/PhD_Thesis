@@ -1,0 +1,47 @@
+log /home/benjamin/Data/LAMMPS/xrd_4000K_3_35A_50ps.log
+
+units metal
+dimension	3
+boundary	p p p 
+
+neighbor	0.3 bin
+neigh_modify	delay 5
+
+variable theta_min equal 25.0
+variable theta_max equal 79.0
+variable grid_constant equal 3.5
+variable n_cells equal 8
+variable r_max equal "v_grid_constant*v_n_cells/2"
+variable r_min equal "(-1)*v_grid_constant*v_n_cells/2"
+variable dumprate equal 125
+
+atom_style full
+
+region          box block ${r_min} ${r_max} ${r_min} ${r_max} ${r_min} ${r_max}
+create_box      1 box
+
+lattice         diamond ${grid_constant}
+region          diamond block ${r_min} ${r_max} ${r_min} ${r_max} ${r_min} ${r_max}
+create_atoms    1 region diamond
+
+mass            1 12.0
+
+#read_dump /home/benjamin/Data/LAMMPS/release_pressure_4000K_3_35A_50ps.dump 0 type x y z vx vz vy fx fz fy
+
+change_box all boundary p p p 
+
+compute xrd_pattern all xrd 1.240343 C 2Theta ${theta_min} ${theta_max} LP 1 echo
+
+#dump    lmp_dump_vel all custom ${dump_rate} /home/benjamin/Data/LAMMPS/xrd_4000K_3_35A_50ps.dump c_xrd_pattern
+label loop
+variable mystep loop 10
+
+print "Step = $(v_mystep)"
+
+fix 1 all ave/histo/weight 1 1 1 ${theta_min} ${theta_max} 100 c_xrd_pattern[1] c_xrd_pattern[2] mode vector file Deg2Theta_${mystep}.xrd
+
+rerun /home/benjamin/Data/LAMMPS/release_pressure_4000K_3_35A_50ps.dump first $((v_mystep-1)*v_dumprate) last $((v_mystep-1)*v_dumprate) dump x y z
+
+next mystep
+jump SELF loop
+variable mystep delete

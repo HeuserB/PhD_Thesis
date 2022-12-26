@@ -67,6 +67,7 @@ def merge_quad23(run, dir_data, q2_ai, q3_ai,q2_mask,q3_mask):
                     correctSolidAngle=True,
                     polarization_factor=0.99,
                     mask=q2_mask)
+                    
     r_q3_result1d = q3_ai.integrate1d(r_q3_tiff,
                     npt=1000,
                     method='csr',

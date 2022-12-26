@@ -1,0 +1,102 @@
+log /home/benjamin/Data/LAMMPS/release_pressure_4000K_3_40A_50ps.log
+
+units metal
+dimension	3
+boundary	f f f
+
+neighbor	0.3 bin
+neigh_modify	delay 5
+
+atom_style full
+
+variable grid_constant equal 3.40
+variable n_cells equal 8
+variable r_max equal "v_grid_constant*v_n_cells/2"
+variable r_min equal "(-1)*v_grid_constant*v_n_cells/2"
+variable dump_rate equal 125 # the rate in timestep that atoms are dumped
+variable run_steps_eq equal 100000 # time steps for the equilibration phase
+variable expansion_time	equal 50 
+variable timestep equal 0.0001 #timestep in picoseconds
+variable erate equal "(3.547/v_grid_constant-1)/(v_expansion_time)" # expand to diamond density over the entire expansion time up to ambient density
+#variable run_steps_ex equal "v_expansion_time/v_timestep" # time steps for the expansion phase
+variable run_steps_ex equal "ceil((((4.7/v_grid_constant)-1)/v_erate) / v_timestep)" # time steps for the expansion phase
+
+# create geometry
+region		box block ${r_min} ${r_max} ${r_min} ${r_max} ${r_min} ${r_max}
+create_box	1 box
+
+variable xmin equal "xlo"
+variable xmax equal "xhi"
+variable ymin equal "ylo"
+variable ymax equal "yhi"
+variable zmin equal "zlo" 
+variable zmax equal "zhi"
+
+# create reflective walls to confine the ND cube
+fix walls all wall/reflect xlo v_xmin xhi v_xmax ylo v_ymin yhi v_ymax zlo v_zmin zhi v_zmax
+
+# create the lattices metal unit for length is angstrom
+# this is a multiple of the diamond lattice constant to avoid edge efects
+lattice		diamond ${grid_constant}
+region		diamond block ${r_min} ${r_max} ${r_min} ${r_max} ${r_min} ${r_max}
+create_atoms    1 region diamond
+
+mass            1 12.0
+
+pair_style edip
+pair_coeff * * /home/benjamin/Documents/LAMMPS/C.edip C
+
+# define groups
+group diamond region diamond
+
+# initial velocities
+
+compute		diamond_temp diamond temp
+velocity	diamond create 4000 12345 temp diamond_temp
+
+dump    lmp_dump_vel all custom ${dump_rate} /home/benjamin/Data/LAMMPS/release_pressure_4000K_3_40A_50ps.dump id type x y z vx vz vy fx fz fy
+
+thermo          50
+thermo_modify   flush yes
+
+# Equilibrate the diamond at a certain temperature
+fix 1 all nvt temp 4000 4000 $(dt*100.0)
+
+timestep        ${timestep} # 0.0001 #when using metal units [ps]
+
+run             ${run_steps_eq} # equilibration timestes
+variable E_equil equal etotal # store the Energy of the equilibrated system as a variable
+
+unfix 1
+
+
+### Expansion simulation
+fix 2 all nve
+
+variable volume equal "vol" # Volume Angstroms^3
+variable energy equal "etotal" # ENERGY IN EV
+variable press_GPa equal "press/10000" # PRESSURE IN GPa
+variable volume_work equal "((press/10000)*vol)/160.21" # MECHANICAL WORK W = PV in EV 
+
+thermo_style custom step temp etotal press vol v_press_GPa v_volume_work
+thermo_modify lost ignore flush yes
+
+fix expandbox all deform 1 x erate ${erate} y erate ${erate} z erate ${erate} remap x
+### mass is given in gramm/mol
+variable atommass atom mass/6.022E23 ### atom mass vector in g
+### force must be in unit eV/Angstrom which is 1.602E-9 N
+### erate*p*m[g] is now in A/(ps**2)*g which is 1E11 N
+variable conversion equal 1E11/(6.022E-9)
+
+variable modpx atom -1*v_erate*vx*v_atommass*v_conversion
+variable modpy atom -1*v_erate*vy*v_atommass*v_conversion
+variable modpz atom -1*v_erate*vz*v_atommass*v_conversion
+
+fix modforce all addforce v_modpx v_modpy v_modpz
+fix		stop all halt 50 v_press_GPa < 0.0  
+run		${run_steps_ex}
+
+unfix 2
+unfix expandbox
+unfix walls
+clear

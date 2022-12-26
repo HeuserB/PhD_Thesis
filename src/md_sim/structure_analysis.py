@@ -93,6 +93,7 @@ def diamond_structure(file, bins=200):
     pipeline                = import_file(file)
     pipeline.modifiers.append(IdentifyDiamondModifier())
     pipeline.modifiers.append(CoordinationAnalysisModifier(cutoff = 8.0, number_of_bins = bins))
+
     
     data                    = pipeline.compute(0)
     

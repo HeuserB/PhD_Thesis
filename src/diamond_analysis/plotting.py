@@ -167,7 +167,8 @@ def plot_waterfall(run_filter=[412,414,416,418,420,422,424,426,430,432,434,436,6
     plt.savefig(outfile)
 
 def plot_temperature_estimates():
-    fig, ax                 =   plt.subplots(figsize=(7,7))
+    fig, ax_main                =   plt.subplots(1,2,figsize=(14,7))
+    ax, ax_vol                  =   ax_main[0], ax_main[1]
 
     Tvals                   =   np.zeros([2,12])
     Terrors                 =   np.zeros([2,12])
@@ -177,6 +178,8 @@ def plot_temperature_estimates():
             str_peak += str(ikl)
         fit_pattern=f'../../.data_SACLA/fits/C{str_peak}_peak_rrun_modelresult.sav'
         for delay_id, delay in enumerate([8,9,10,11,12,13,14,15,16,17,18,19]):
+            fig_spectrum, ax_spectrum       = plt.subplots(figsize=(7,7))
+
             run                         = SACLA_dict[delay]
 
             fitfile                     = re.sub('run',str(run),fit_pattern)
@@ -188,24 +191,46 @@ def plot_temperature_estimates():
             mask                        = np.logical_and(run_data[:,0] > thetamin, run_data[:,0] < thetamax)
 
             try:
-                T, Tmin, Tmax               = T_from_peak(fit.values['C_center'], fit.params['C_center'].stderr,peak)
+                T, Tmin, Tmax, V, Vmin, Vmax               = T_from_peak(fit.values['C_center'], fit.params['C_center'].stderr,peak)
             except:
-                T, Tmin, Tmax               = T_from_peak(fit.values['C_center'], fit.values['C_center']*0.01 ,peak)
+                T, Tmin, Tmax, V, Vmin, Vmax                = T_from_peak(fit.values['C_center'], fit.values['C_center']*0.01 ,peak)
             if np.isnan(Tmax):
                 Tmax                    = 2*T - Tmin
+            natoms_uc, mass_atomic_C    =   8, 12.011
+            mass_uc                     = natoms_uc * mass_atomic_C
+            proportion                  = 1.66053907
+            rho, rho_min, rho_max       = mass_uc/V*proportion, mass_uc/Vmin*proportion, mass_uc/Vmax*proportion
 
             ax.errorbar(delay, T, yerr=np.array([[T-Tmin,Tmax-T]]).T, fmt="o",c=color,markersize=5)
+            print(rho_min)
+            if rho_min>1.:
+                ax_vol.errorbar(delay, rho, yerr=np.array([[rho-rho_min],[rho_max-rho]]), fmt="o",c=color,markersize=5)
+            ax_spectrum.errorbar(run_data[::5,0], run_data[::5,1], yerr=run_data[::5,2], fmt="o",c=color,markersize=0.1)
+            ax_spectrum.set_xlabel(r"Scattering angle $2\theta$ [$\circ$]",fontsize=30)
+            ax_spectrum.set_ylabel(r"Intensity [au]",fontsize=30)
+            fig_spectrum.tight_layout()
+            title = f'../../../../../W_PhD_Articles/Heuser_ND_recovery/figures/lineout_{str(run)}.pdf'
+            plt.savefig(title, format='pdf', dpi=1200)
+            plt.close(fig_spectrum)
 
     ax.set_xlabel(r"Probe laser delay [ns]",fontsize=30)
     ax.set_ylabel(r"Diamond temperature [K]",fontsize=30)
+    ax_vol.set_xlabel(r"Probe laser delay [ns]",fontsize=30)
+    ax_vol.set_ylabel(r"Diamond density [g/cc]",fontsize=30)
     #ax.axhline(y=weighted_mean,xmin=9.,xmax=19.,c="r",linewidth=10)
     #ax.plot([9,19],[2700,2700],c='r',linestyle='dashed',label='After breakout mean T')
     ax.tick_params(axis='both', which= 'major', labelsize=25)
+    ax_vol.tick_params(axis='both', which= 'major', labelsize=25)
     #ax.spines['top'].set_visible(False)
     #ax.spines['right'].set_visible(False)
     legend_elements = [ax.errorbar([], [], yerr=[0.01], fmt="o",c=sns.color_palette('dark')[0],markersize=5,label='(111) peak')]
     legend_elements = [ax.errorbar([], [], yerr=[0.01], fmt="o",c=sns.color_palette('dark')[1],markersize=5,label='(220) peak')]
+
+    #legend_elements_vol = [ax_vol.errorbar([], [], yerr=[0.01], fmt="o",c=sns.color_palette('dark')[0],markersize=5,label='(111) peak')]
+    #legend_elements_vol = [ax_vol.errorbar([], [], yerr=[0.01], fmt="o",c=sns.color_palette('dark')[1],markersize=5,label='(220) peak')]
+    
     ax.legend(fontsize=20)
+    #ax_vol.legend(fontsize=20)
     sns.set(style="ticks")
     sns.set_style("whitegrid")
     fig.tight_layout()

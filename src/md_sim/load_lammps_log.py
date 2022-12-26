@@ -37,7 +37,7 @@ def load_thermo(file : str):
     num_of_sets         = len(re.findall(start_pattern, txt))
     #print(f"Found {num_of_sets} different run commands")
     #[print(f'i is: {i}') for i in timestep_pattern.findall(txt)] 
-    dt                  = [np.float(i) for i in timestep_pattern.findall(txt)]
+    dt                  = [float(i) for i in timestep_pattern.findall(txt)]
     n_atoms             = np.sum([np.int(i) for i in atom_pattern.findall(txt)])
     #print(f"A total of {n_atoms} were created.")
     unit                = units_pattern.findall(txt)[0]

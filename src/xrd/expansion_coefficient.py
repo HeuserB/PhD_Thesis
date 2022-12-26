@@ -28,7 +28,8 @@ def T_from_peak(twotheta, twotheta_err, peak, wavelength=1.240343):
     a_min               = wavelength / (2 * np.sin(np.deg2rad((twotheta+twotheta_err)/2.))) * np.sqrt(np.sum(peak**2))
     a_max               = wavelength / (2 * np.sin(np.deg2rad((twotheta-twotheta_err)/2.))) * np.sqrt(np.sum(peak**2))
     T, Tmin, Tmax       = T_from_a(a), T_from_a(a_min), T_from_a(a_max)
-    return T, Tmin, Tmax
+    V, Vmin, Vmax       = a**3, a_min**3, a_max**3
+    return T, Tmin, Tmax, V, Vmin, Vmax
 
 def fit_peak(shotfile="../../.data_SACLA/logbook/PET.pkl",run_filter=[424,436,422,434,420,432,418,430,412,426,414,617],thetarange=[31., 36.5],peak=np.array([1,1,1])):
     if ((peak == np.array([1,1,1])).all()):
